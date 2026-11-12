@@ -1,5 +1,6 @@
 ---
 const { title = 'Amit Madakatti — Cloud & DevOps Engineer', description = 'Cloud, DevOps and platform engineering portfolio.' } = Astro.props;
+import '../styles/global.css';
 ---
 <!doctype html>
 <html lang="en">
@@ -29,18 +30,20 @@ const { title = 'Amit Madakatti — Cloud & DevOps Engineer', description = 'Clo
         nav.classList.remove('is-open');
         menu?.setAttribute('aria-expanded', 'false');
       }));
-      const reveal = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            reveal.unobserve(entry.target);
-          }
+      if ('IntersectionObserver' in window) {
+        const reveal = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              reveal.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.project-card, .cap-row, .timeline article, .manifesto-copy, .section-heading').forEach((el) => {
+          el.classList.add('reveal');
+          reveal.observe(el);
         });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.project-card, .cap-row, .timeline article, .manifesto-copy, .section-heading').forEach((el) => {
-        el.classList.add('reveal');
-        reveal.observe(el);
-      });
+      }
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       document.documentElement.dataset.motion = prefersReduced ? 'reduced' : 'full';
     </script>
