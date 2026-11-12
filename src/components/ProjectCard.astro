@@ -1,0 +1,11 @@
+---
+const { number, title, category, year, description, tags, href, tone } = Astro.props;
+---
+<a class={`project-card tone-${tone}`} href={href}>
+  <div class="project-visual">
+    <div class="visual-grid"></div>
+    <div class="visual-window"><div class="window-top"><i></i><i></i><i></i><span>DEPLOYMENT / OBSERVABILITY</span></div><div class="window-body"><span class="window-code">01&nbsp; &gt; pipeline.run()<br/>02&nbsp; &nbsp; image: verified<br/>03&nbsp; &nbsp; canary: healthy<br/>04&nbsp; &nbsp; rollout: complete</span><div class="window-orbit"><span></span><span></span><span></span></div></div></div>
+    <span class="project-number">{number}</span><span class="visual-cta">VIEW CASE ↗</span>
+  </div>
+  <div class="project-info"><div><span class="eyebrow">{category} / {year}</span><h3>{title}</h3><p>{description}</p><div class="tag-list">{tags.map((tag) => <span>{tag}</span>)}</div></div><span class="project-arrow">↗</span></div>
+</a>
