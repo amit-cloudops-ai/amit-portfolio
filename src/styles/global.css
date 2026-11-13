@@ -1258,3 +1258,250 @@ a.credential-link:hover{
 @media(prefers-reduced-motion:reduce){
   .contact-email,.contact-socials a,.contact-back-top{transition:none}
 }
+
+
+/* Persistent global section menu */
+.site-menu-wrap{
+  position:fixed;
+  top:24px;
+  right:2.1vw;
+  z-index:1000;
+  isolation:isolate;
+}
+.site-menu-wrap .work-menu-button{
+  width:58px;
+  height:58px;
+  box-shadow:0 8px 24px #211c1b18;
+}
+.site-menu-wrap .work-menu{
+  top:70px;
+  right:0;
+  z-index:1001;
+  width:210px;
+  max-height:min(70vh,520px);
+  overflow:auto;
+}
+.hero-nav{padding-right:78px}
+@media(max-width:700px){
+  .site-menu-wrap{top:78px;right:19px}
+  .site-menu-wrap .work-menu-button{width:48px;height:48px}
+  .site-menu-wrap .work-menu{top:58px}
+  .hero-nav{padding-right:0}
+}
+
+/* About — two-column portrait composition from the Juno reference */
+.journey-section{
+  display:flex;
+  min-height:min(760px,100svh);
+  align-items:center;
+  padding:clamp(64px,8vw,112px) 3.2vw;
+  background:#fff;
+  color:#211c1b;
+}
+.journey-layout{
+  display:grid;
+  width:100%;
+  max-width:1600px;
+  grid-template-columns:minmax(0,1.08fr) minmax(300px,.82fr);
+  align-items:center;
+  gap:clamp(50px,8vw,128px);
+  margin:0 auto;
+}
+.journey-copy{max-width:720px}
+.journey-copy .section-kicker{
+  margin:0 0 clamp(28px,4vw,54px);
+  color:#8a817a;
+}
+.journey-copy h2{
+  margin:0;
+  font-size:clamp(64px,8vw,116px);
+  font-weight:600;
+  line-height:.92;
+  letter-spacing:-.085em;
+}
+.journey-copy h2 span{color:#a83b2b}
+.journey-intro{
+  max-width:540px;
+  margin:28px 0 12px;
+  color:#302a27;
+  font-size:clamp(18px,1.65vw,23px);
+  line-height:1.4;
+}
+.journey-description{
+  max-width:510px;
+  margin:0;
+  color:#69615c;
+  font-size:16px;
+  line-height:1.6;
+}
+.journey-button{
+  display:grid;
+  width:112px;
+  height:112px;
+  place-items:center;
+  margin-top:34px;
+  border-radius:50%;
+  background:#a83b2b;
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  text-align:center;
+  transition:transform .25s ease,background .25s ease;
+}
+.journey-button:hover{transform:scale(1.06);background:#211c1b}
+.journey-portrait{
+  width:100%;
+  max-width:540px;
+  height:clamp(390px,48vw,610px);
+  justify-self:end;
+  margin:0;
+  overflow:hidden;
+  border-radius:26px;
+  background:#e8e2db;
+}
+.journey-portrait img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 35%;
+}
+@media(max-width:1000px){
+  .journey-section{min-height:0;padding:90px 5vw}
+  .journey-layout{grid-template-columns:minmax(0,1fr) minmax(260px,.82fr);gap:5vw}
+  .journey-copy h2{font-size:clamp(58px,7.5vw,82px)}
+  .journey-intro{font-size:18px}
+  .journey-description{font-size:14px}
+  .journey-portrait{height:440px}
+}
+@media(max-width:700px){
+  .journey-section{display:block;min-height:0;padding:78px 20px 84px}
+  .journey-layout{display:flex;flex-direction:column;align-items:stretch;gap:34px}
+  .journey-copy .section-kicker{margin-bottom:22px}
+  .journey-copy h2{font-size:clamp(58px,14vw,82px)}
+  .journey-intro{margin:21px 0 10px;font-size:17px}
+  .journey-description{font-size:14px;line-height:1.6}
+  .journey-button{width:96px;height:96px;margin-top:26px;font-size:11px}
+  .journey-portrait{
+    width:100%;
+    max-width:none;
+    height:min(112vw,480px);
+    border-radius:22px;
+  }
+}
+
+/* Contact — close to the reference's dark project invitation */
+.contact-section{
+  padding:clamp(58px,8vw,104px) 2.6vw 22px;
+  background:#1d1816;
+  color:#fff;
+}
+.contact-intro-line{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  max-width:1600px;
+  margin:0 auto;
+}
+.contact-avatar{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  overflow:hidden;
+  border-radius:50%;
+  background:#65564c;
+}
+.contact-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.contact-intro-line p{
+  margin:0;
+  color:#fff;
+  font-size:17px;
+  font-weight:500;
+  line-height:1.15;
+  letter-spacing:-.035em;
+}
+.contact-main{display:none}
+.contact-section h2{
+  max-width:1600px;
+  margin:clamp(54px,7vw,90px) auto 0;
+  font-size:clamp(78px,12.8vw,184px);
+  font-weight:600;
+  line-height:.82;
+  letter-spacing:-.095em;
+}
+.contact-section h2 span{color:#fff}
+.contact-action-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);
+  align-items:end;
+  gap:5vw;
+  max-width:1600px;
+  margin:clamp(42px,6vw,72px) auto clamp(76px,9vw,112px);
+}
+.contact-prompt{
+  max-width:440px;
+  margin:0;
+  color:#e0d8d2;
+  font-size:15px;
+  line-height:1.55;
+}
+.contact-action{justify-self:end;width:min(100%,430px)}
+.contact-email{
+  display:flex;
+  width:max-content;
+  max-width:100%;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:15px 23px;
+  border:1px solid #8b817b;
+  border-radius:100px;
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0;
+}
+.contact-email span{color:#fff;font-size:16px}
+.contact-email:hover{border-color:#fff;color:#fff}
+.contact-action>p{
+  margin:19px 0 0;
+  color:#a99f98;
+  font-size:11px;
+  text-align:right;
+}
+.contact-action>p a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.contact-footer{
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  align-items:center;
+  gap:24px;
+  max-width:1600px;
+  margin:0 auto;
+  padding:22px 0 8px;
+  border-top:1px solid #403936;
+}
+.contact-footer nav{display:flex;gap:26px}
+.contact-footer a,.contact-footer>span{
+  color:#d1c8c1;
+  font-size:10px;
+  line-height:1.4;
+}
+.contact-footer a:hover{color:#fff}
+.contact-footer>span{color:#928780;text-align:right}
+@media(max-width:1000px){
+  .contact-section{padding-right:5vw;padding-left:5vw}
+  .contact-section h2{font-size:clamp(70px,11vw,120px)}
+}
+@media(max-width:700px){
+  .contact-section{padding:66px 20px 22px}
+  .contact-intro-line p{font-size:15px}
+  .contact-section h2{margin-top:56px;font-size:clamp(60px,14vw,92px);line-height:.88}
+  .contact-action-row{display:flex;flex-direction:column;align-items:stretch;gap:28px;margin:32px auto 58px}
+  .contact-prompt{font-size:14px}
+  .contact-action{justify-self:stretch;width:100%}
+  .contact-email{width:100%;justify-content:space-between;padding:14px 18px;font-size:12px}
+  .contact-action>p{text-align:left}
+  .contact-footer{grid-template-columns:1fr;gap:17px;padding-top:18px}
+  .contact-footer nav{gap:22px}
+  .contact-footer>span{text-align:left}
+}
