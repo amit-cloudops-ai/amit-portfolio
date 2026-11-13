@@ -432,7 +432,7 @@ import NameTicker from '../components/NameTicker';
         <p>Have a cloud project<br />in mind?</p>
       </div>
 
-      <h2 id="contact-title">Start a <span>project.</span></h2>
+      <h2 id="contact-title">Start a <span>project</span></h2>
 
       <div class="contact-action-row">
         <p class="contact-prompt">Tell me what you’re building and when you need it. I’ll get back to you as soon as I can.</p>
@@ -472,13 +472,13 @@ import NameTicker from '../components/NameTicker';
       }));
     }
 
-    const workMenuWrap = document.querySelector<HTMLElement>('.work-menu-wrap');
-    const selectedWorkSection = document.querySelector<HTMLElement>('#selected-work');
-    if (workMenuWrap && selectedWorkSection && 'IntersectionObserver' in window) {
-      const workObserver = new IntersectionObserver(([entry]) => {
-        workMenuWrap.classList.toggle('is-active', entry.isIntersecting);
-      }, { threshold: 0.04 });
-      workObserver.observe(selectedWorkSection);
+    const globalMenuWrap = document.querySelector<HTMLElement>('.site-menu-wrap');
+    const heroSection = document.querySelector<HTMLElement>('.hero-section');
+    if (globalMenuWrap && heroSection && 'IntersectionObserver' in window) {
+      const menuObserver = new IntersectionObserver(([entry]) => {
+        globalMenuWrap.classList.toggle('is-visible', !entry.isIntersecting);
+      }, { threshold: 0.08 });
+      menuObserver.observe(heroSection);
     }
 
     const menuButton = document.querySelector<HTMLButtonElement>('.work-menu-button');
