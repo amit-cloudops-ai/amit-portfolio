@@ -4,6 +4,19 @@ import NameTicker from '../components/NameTicker';
 ---
 <BaseLayout title="Amit Madakatti — Cloud & DevOps Engineer" description="Amit Madakatti is a Cloud and DevOps Engineer building automated, secure and scalable infrastructure on AWS.">
   <main class="hero-page">
+    <div class="site-menu-wrap">
+      <button class="work-menu-button" type="button" aria-expanded="false" aria-controls="work-menu" aria-label="Open section menu">
+        <span class="menu-glyph" aria-hidden="true"><i></i><i></i></span>
+      </button>
+      <nav class="work-menu" id="work-menu" aria-label="Section menu" hidden>
+        <a href="#top">Home <span>01</span></a>
+        <a href="#selected-work">Work <span>02</span></a>
+        <a href="#skills">Skills <span>03</span></a>
+        <a href="#agents">Agents <span>04</span></a>
+        <a href="#about">About <span>05</span></a>
+        <a href="#contact">Contact <span>06</span></a>
+      </nav>
+    </div>
     <section class="hero-section" id="top" aria-labelledby="hero-title">
       <header class="hero-nav">
         <a class="nav-left" href="/" aria-label="Amit Madakatti home">Amit Madakatti</a>
@@ -35,16 +48,6 @@ import NameTicker from '../components/NameTicker';
         <div class="work-heading-copy">
           <p class="section-kicker">SELECTED WORK / 2024—26</p>
           <h2 id="work-title">Systems built<br />to <span>run.</span></h2>
-        </div>
-        <div class="work-menu-wrap">
-          <button class="work-menu-button" type="button" aria-expanded="false" aria-controls="work-menu" aria-label="Open section menu">
-            <span class="menu-glyph" aria-hidden="true"><i></i><i></i></span>
-          </button>
-          <nav class="work-menu" id="work-menu" aria-label="Section menu" hidden>
-            <a href="/">Home <span>01</span></a>
-            <a href="/about/">About <span>02</span></a>
-            <a href="mailto:amitpm.work@gmail.com">Contact <span>03</span></a>
-          </nav>
         </div>
       </div>
 
@@ -326,50 +329,16 @@ import NameTicker from '../components/NameTicker';
 
     <section class="journey-section" id="about" aria-labelledby="journey-title">
       <div class="journey-layout">
-        <header class="journey-heading">
-          <p class="section-kicker">ABOUT / THE PATH HERE</p>
-          <h2 id="journey-title">From raw metal<br />to <span>cloud systems.</span></h2>
-          <p class="journey-lead">A less-than-linear route into engineering — shaped by materials science, teaching, building and the discipline of operating real systems.</p>
-          <a class="journey-link" href="/about/">MORE ABOUT ME <span aria-hidden="true">↗</span></a>
-        </header>
-
-        <div class="journey-timeline">
-          <article class="journey-entry">
-            <span class="journey-number">01</span>
-            <div class="journey-entry-main">
-              <div class="journey-meta"><span>2021 — 2025</span><span>NITK SURATHKAL</span></div>
-              <h3>Forged in engineering.</h3>
-              <p>Studied Metallurgical and Materials Engineering at NITK. At BHEL Electronics Division, I got an early view of how engineering, production planning and quality work together inside a complex operation.</p>
-            </div>
-          </article>
-
-          <article class="journey-entry">
-            <span class="journey-number">02</span>
-            <div class="journey-entry-main">
-              <div class="journey-meta"><span>2025 — 2026</span><span>KANNUR PU COLLEGE</span></div>
-              <h3>Learned to make the complex clear.</h3>
-              <p>Teaching mathematics to students in classes 11 and 12 strengthened a skill I still rely on: breaking complicated ideas into clear, workable steps.</p>
-            </div>
-          </article>
-
-          <article class="journey-entry">
-            <span class="journey-number">03</span>
-            <div class="journey-entry-main">
-              <div class="journey-meta"><span>BUILDING / INDEPENDENT WORK</span><span>AWS · DEVOPS · PLATFORM</span></div>
-              <h3>Built systems, not just demos.</h3>
-              <p>I moved deeper into cloud engineering through hands-on work with AWS, Linux, containers, infrastructure as code, CI/CD and Kubernetes — connecting architecture to deployment and operations.</p>
-            </div>
-          </article>
-
-          <article class="journey-entry">
-            <span class="journey-number">04</span>
-            <div class="journey-entry-main">
-              <div class="journey-meta"><span>2026 — PRESENT</span><span>F13 TECHNOLOGIES</span></div>
-              <h3>Now, closer to the cloud.</h3>
-              <p>Working as an AWS Cloud Intern in Bengaluru, continuing to develop the practical engineering habits behind secure infrastructure, automation and reliable delivery.</p>
-            </div>
-          </article>
+        <div class="journey-copy">
+          <p class="section-kicker">A LITTLE ABOUT ME</p>
+          <h2 id="journey-title">Hi, I’m <span>Amit.</span></h2>
+          <p class="journey-intro">I’m a Cloud &amp; DevOps Engineer building the systems behind reliable products.</p>
+          <p class="journey-description">My path into cloud engineering started with materials engineering at NITK, took me through manufacturing and teaching, and led me to building on AWS. I enjoy making complex systems understandable, automating the repetitive work, and designing infrastructure that people can depend on.</p>
+          <a class="journey-button" href="/about/"><span>More about me</span></a>
         </div>
+        <figure class="journey-portrait">
+          <img src="/images/amit-hero.webp" alt="Amit Madakatti" loading="lazy" />
+        </figure>
       </div>
     </section>
 
@@ -458,36 +427,33 @@ import NameTicker from '../components/NameTicker';
     </section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="contact-topline">
-        <p class="section-kicker">CONTACT / OPEN TO WHAT'S NEXT</p>
-        <span class="contact-location">KARNATAKA, INDIA · IST</span>
+      <div class="contact-intro-line">
+        <div class="contact-avatar"><img src="/images/amit-hero.webp" alt="" loading="lazy" /></div>
+        <p>Have a cloud project<br />or opportunity in mind?</p>
       </div>
 
-      <div class="contact-main">
-        <h2 id="contact-title">Have a cloud<br />challenge? <span>Let's talk.</span></h2>
-        <div class="contact-aside">
-          <p>I'm interested in DevOps, Cloud, Platform Engineering and SRE opportunities — and conversations about building reliable systems.</p>
-          <a class="contact-email" href="mailto:amitpm.work@gmail.com">
-            <span>amitpm.work@gmail.com</span>
-            <span class="contact-email-arrow" aria-hidden="true">↗</span>
-          </a>
+      <h2 id="contact-title">Let’s build<br />something <span>reliable.</span></h2>
+
+      <div class="contact-action-row">
+        <p class="contact-prompt">Tell me what you’re building and where you need help. I’m open to conversations about cloud, DevOps and platform engineering.</p>
+        <div class="contact-action">
+          <a class="contact-email" href="mailto:amitpm.work@gmail.com">amitpm.work@gmail.com <span aria-hidden="true">↗</span></a>
+          <p>Prefer LinkedIn? <a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer">Let’s connect.</a></p>
         </div>
       </div>
 
-      <div class="contact-bottom">
-        <div class="contact-socials" aria-label="Social links">
-          <a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a>
-          <a href="https://github.com/amit-cloudops-ai" target="_blank" rel="noreferrer">GITHUB <span aria-hidden="true">↗</span></a>
-        </div>
-        <a class="contact-back-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">BACK TO TOP <span aria-hidden="true">↑</span></a>
-      </div>
+      <footer class="contact-footer">
+        <nav aria-label="Footer navigation">
+          <a href="#selected-work">Work</a>
+          <a href="#about">About</a>
+        </nav>
+        <nav aria-label="Social links">
+          <a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/amit-cloudops-ai" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </nav>
+        <span>© 2026 Amit Madakatti</span>
+      </footer>
     </section>
-
-    <footer class="site-footer">
-      <a class="footer-wordmark" href="/">AMIT MADAKATTI<span>®</span></a>
-      <p>Cloud &amp; DevOps Engineer</p>
-      <span>© <span id="footer-year">2026</span> · BUILT WITH INTENT.</span>
-    </footer>
   </main>
   <script>
     const heroMenuButton = document.querySelector<HTMLButtonElement>('.hero-mobile-menu');
