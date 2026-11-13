@@ -360,9 +360,16 @@ import NameTicker from '../components/NameTicker';
           <a href="/work/">Work</a>
           <a href="#about">About</a>
         </nav>
-        <nav aria-label="Social links">
-          <a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a href="https://github.com/amit-cloudops-ai" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <nav class="contact-social-links" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.02h2.97v9.32ZM6.45 7.75a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.59h-2.96v-4.53c0-1.08-.02-2.47-1.51-2.47-1.52 0-1.75 1.18-1.75 2.39v4.61H9.16V9.02h2.84v1.27h.04c.4-.73 1.36-1.5 2.8-1.5 3 0 3.5 1.97 3.5 4.53v5.02Z"/></svg>
+            <span>LinkedIn</span><span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="mailto:amitpm.work@gmail.com" aria-label="Email Amit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2.8 5.5A2.8 2.8 0 0 1 5.6 2.7h12.8a2.8 2.8 0 0 1 2.8 2.8v13a2.8 2.8 0 0 1-2.8 2.8H5.6a2.8 2.8 0 0 1-2.8-2.8v-13Zm2.1.1 7.1 5.3 7.1-5.3a.7.7 0 0 0-.7-.8H5.6a.7.7 0 0 0-.7.8Zm14.2 2.6-6.5 4.8a1.05 1.05 0 0 1-1.2 0L4.9 8.2v10.3c0 .4.3.7.7.7h12.8c.4 0 .7-.3.7-.7V8.2Z"/></svg>
+            <span>Email</span><span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://github.com/amit-cloudops-ai" target="_blank" rel="noreferrer">GitHub <span class="social-arrow" aria-hidden="true">↗</span></a>
         </nav>
         <span>© 2026 Amit Madakatti</span>
       </footer>
@@ -415,6 +422,45 @@ import NameTicker from '../components/NameTicker';
           menuButton.focus();
         }
       });
+    }
+
+    // Keep the white ticker layer exactly aligned with the portrait at every breakpoint.
+    const heroStage = document.querySelector<HTMLElement>('.hero-stage');
+    const portrait = heroStage?.querySelector<HTMLElement>('.portrait');
+    const lightTicker = heroStage?.querySelector<HTMLElement>('.ticker-light');
+    const syncPortraitTicker = () => {
+      if (!heroStage || !portrait || !lightTicker) return;
+      const stage = heroStage.getBoundingClientRect();
+      const photo = portrait.getBoundingClientRect();
+      const left = Math.max(0, photo.left - stage.left);
+      const right = Math.min(stage.width, photo.right - stage.left);
+      lightTicker.style.clipPath = `inset(0 calc(100% - ${right}px) 0 ${left}px)`;
+    };
+    if (heroStage && portrait && lightTicker) {
+      syncPortraitTicker();
+      if ('ResizeObserver' in window) {
+        const portraitObserver = new ResizeObserver(syncPortraitTicker);
+        portraitObserver.observe(heroStage);
+        portraitObserver.observe(portrait);
+      }
+      window.addEventListener('resize', syncPortraitTicker, { passive: true });
+    }
+
+    // Reveal content as it enters view without hiding it when motion is unavailable.
+    const revealTargets = document.querySelectorAll<HTMLElement>(
+      '.project-row, .work-archive-cta, .skill-group, .how-step, .agent-row, .journey-copy, .journey-portrait'
+    );
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      revealTargets.forEach((element) => element.classList.add('reveal-item'));
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+      revealTargets.forEach((element) => revealObserver.observe(element));
     }
 
     const preview = document.querySelector<HTMLElement>('.project-follow-preview');
