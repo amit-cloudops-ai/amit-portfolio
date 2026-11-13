@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Employee onboarding and identity service</title><desc id="desc">Documented AWS serverless workflow; repository contains design contracts and package placeholders, not the complete handlers.</desc>
+<defs>
+ <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#8D8983"/></marker>
+ <style>
+ text{font-family:Inter,Arial,sans-serif;fill:#24211F}.eyebrow{font-size:16px;letter-spacing:3px;fill:#8B817A;font-weight:700}.heading{font-size:34px;font-weight:700;letter-spacing:-1.2px}.sub{font-size:18px;fill:#6F6964}.box{fill:#fff;stroke:#D8D2CB;stroke-width:2}.cloud{fill:#F0EAE3;stroke:#CFC3B7;stroke-width:2}.accent{fill:#A83B2B;stroke:#A83B2B}.accentText{fill:#fff}.green{fill:#E8F1E9;stroke:#9EB6A2;stroke-width:2}.line{fill:none;stroke:#8D8983;stroke-width:3;marker-end:url(#arrow)}.dash{fill:none;stroke:#B7AFA7;stroke-width:2;stroke-dasharray:8 8}.small{font-size:16px;fill:#6F6964}.label{font-size:21px;font-weight:700}.tiny{font-size:14px;fill:#756E68}
+ </style>
+</defs>
+<rect width="1200" height="760" fill="#F7F7F5"/>
+<text x="64" y="58" class="eyebrow">AMIT MADAKATTI / ENGINEERING CASE STUDY</text>
+<text x="64" y="112" class="heading">Employee onboarding and identity service</text>
+<text x="64" y="146" class="sub">Documented AWS serverless workflow; repository contains design contracts and package placeholders, not the complete handlers.</text>
+
+<rect x="70" y="205" width="1060" height="430" rx="22" class="dash"/>
+<text x="96" y="238" class="eyebrow">AWS / SERVERLESS WORKFLOW — DOCUMENTED DESIGN</text>
+<rect x="100" y="285" width="190" height="82" rx="14" class="box"/><text x="195" y="318" text-anchor="middle" class="label">HR Admin</text><text x="195" y="345" text-anchor="middle" class="small">Create employee</text>
+<rect x="360" y="285" width="205" height="82" rx="14" class="cloud"/><text x="462" y="318" text-anchor="middle" class="label">API Gateway</text><text x="462" y="345" text-anchor="middle" class="small">Cognito authorizer</text>
+<path d="M290 326 H355" class="line"/>
+<rect x="640" y="270" width="210" height="112" rx="14" class="accent"/><text x="745" y="310" text-anchor="middle" class="label accentText">Identity service</text><text x="745" y="340" text-anchor="middle" class="small accentText">Employee UUID</text><text x="745" y="363" text-anchor="middle" class="small accentText">Cognito + SES invite</text>
+<path d="M565 326 H635" class="line"/>
+<rect x="930" y="285" width="160" height="82" rx="14" class="box"/><text x="1010" y="318" text-anchor="middle" class="label">DynamoDB</text><text x="1010" y="345" text-anchor="middle" class="small">Employee record</text>
+<path d="M850 326 H925" class="line"/>
+<rect x="350" y="455" width="240" height="110" rx="14" class="cloud"/><text x="470" y="492" text-anchor="middle" class="label">Step Functions</text><text x="470" y="520" text-anchor="middle" class="small">Callback task tokens</text><text x="470" y="544" text-anchor="middle" class="small">24h reminder / wait loop</text>
+<path d="M745 382 V420 H470 V450" class="line"/>
+<rect x="670" y="455" width="190" height="110" rx="14" class="box"/><text x="765" y="492" text-anchor="middle" class="label">Stage handlers</text><text x="765" y="520" text-anchor="middle" class="small">IT / policy / manager</text><text x="765" y="544" text-anchor="middle" class="small">Simulated or real adapters</text>
+<path d="M590 510 H665" class="line"/>
+<rect x="930" y="455" width="160" height="110" rx="14" class="green"/><text x="1010" y="492" text-anchor="middle" class="label">Documents</text><text x="1010" y="520" text-anchor="middle" class="small">Encrypted S3</text><text x="1010" y="544" text-anchor="middle" class="small">SNS HR notification</text>
+<path d="M860 510 H925" class="line"/>
+<text x="100" y="610" class="small">Portal + HR dashboard read onboarding progress through the API contract.</text>
+
+<text x="64" y="724" class="tiny">Architecture reconstructed from the repository's documented implementation. Not a live AWS topology view.</text>
+</svg>
