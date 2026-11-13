@@ -1,6 +1,35 @@
 ---
 const { title = 'Amit Madakatti — Cloud & DevOps Engineer', description = 'Cloud, DevOps and platform engineering portfolio.' } = Astro.props;
 import '../styles/global.css';
+const siteUrl = Astro.site?.toString() ?? 'https://amit-portfolio.pages.dev';
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Amit Madakatti',
+  jobTitle: 'Cloud & DevOps Engineer',
+  url: siteUrl,
+  email: 'mailto:amitpm.work@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'Karnataka',
+    addressCountry: 'IN'
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/amitpm8/',
+    'https://github.com/amit-cloudops-ai'
+  ],
+  knowsAbout: [
+    'Amazon Web Services',
+    'Cloud Engineering',
+    'DevOps',
+    'Kubernetes',
+    'Platform Engineering',
+    'Infrastructure as Code',
+    'GitOps',
+    'Observability',
+    'Site Reliability Engineering'
+  ]
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -20,6 +49,7 @@ import '../styles/global.css';
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://amit-portfolio.pages.dev/images/amit-hero.webp" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <slot name="head" />
   </head>
   <body>
