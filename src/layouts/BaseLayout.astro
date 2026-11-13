@@ -5,16 +5,30 @@ import '../styles/global.css';
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="color-scheme" content="light" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" /><title>{title}</title>
+    <meta name="description" content={description} /><link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <slot name="head" />
   </head>
   <body>
     <slot />
+    <script>
+      const tracks = document.querySelectorAll<HTMLElement>('.ticker-track');
+      let previousY = window.scrollY;
+      let direction: 'normal' | 'reverse' = 'normal';
+      const setDirection = (next: 'normal' | 'reverse') => {
+        if (next === direction) return;
+        direction = next;
+        tracks.forEach((track) => { track.style.animationDirection = direction; });
+      };
+      window.addEventListener('scroll', () => {
+        const currentY = window.scrollY;
+        if (Math.abs(currentY - previousY) > 1) setDirection(currentY > previousY ? 'normal' : 'reverse');
+        previousY = currentY;
+      }, { passive: true });
+      window.addEventListener('wheel', (event) => {
+        if (Math.abs(event.deltaY) > 1) setDirection(event.deltaY > 0 ? 'normal' : 'reverse');
+      }, { passive: true });
+    </script>
   </body>
 </html>
