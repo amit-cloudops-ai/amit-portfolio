@@ -430,10 +430,10 @@ import NameTicker from '../components/NameTicker';
     const lightTicker = heroStage?.querySelector<HTMLElement>('.ticker-light');
     const syncPortraitTicker = () => {
       if (!heroStage || !portrait || !lightTicker) return;
-      const stage = heroStage.getBoundingClientRect();
+      const tickerBounds = lightTicker.getBoundingClientRect();
       const photo = portrait.getBoundingClientRect();
-      const left = Math.max(0, photo.left - stage.left);
-      const right = Math.min(stage.width, photo.right - stage.left);
+      const left = Math.max(0, photo.left - tickerBounds.left);
+      const right = Math.min(tickerBounds.width, photo.right - tickerBounds.left);
       lightTicker.style.clipPath = `inset(0 calc(100% - ${right}px) 0 ${left}px)`;
     };
     if (heroStage && portrait && lightTicker) {
