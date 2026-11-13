@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2240" height="520" viewBox="0 0 2240 520">
+<defs>
+ <linearGradient id="blue" x2="1" y2="1"><stop stop-color="#dcecf8"/><stop offset="1" stop-color="#b8d5e9"/></linearGradient>
+ <linearGradient id="green" x2="1" y2="1"><stop stop-color="#103c2b"/><stop offset="1" stop-color="#09271d"/></linearGradient>
+ <linearGradient id="sand" x2="1" y2="1"><stop stop-color="#ead7bd"/><stop offset="1" stop-color="#d8b995"/></linearGradient>
+ <linearGradient id="rust" x2="1" y2="1"><stop stop-color="#643b27"/><stop offset="1" stop-color="#3b241a"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity=".2"/></filter>
+</defs>
+<!-- card 1: cloud platform -->
+<g transform="translate(18 24)">
+ <rect width="520" height="430" rx="28" fill="url(#blue)"/>
+ <g filter="url(#shadow)" transform="translate(34 62)">
+  <rect width="452" height="300" rx="13" fill="#fff"/>
+  <path d="M0 13Q0 0 13 0H439Q452 0 452 13V35H0Z" fill="#f3f6f8"/>
+  <circle cx="18" cy="18" r="4" fill="#e66c60"/><circle cx="33" cy="18" r="4" fill="#e8bd55"/><circle cx="48" cy="18" r="4" fill="#67a77d"/>
+  <rect x="135" y="10" width="180" height="16" rx="5" fill="#e1e7ec"/>
+  <rect x="22" y="58" width="120" height="10" rx="4" fill="#20334a"/>
+  <rect x="22" y="80" width="184" height="6" rx="3" fill="#a9b7c3"/>
+  <rect x="22" y="108" width="190" height="130" rx="8" fill="#edf4f8"/>
+  <path d="M38 194L88 143 122 174 163 127 197 194Z" fill="#9cb6c9"/>
+  <rect x="232" y="58" width="198" height="82" rx="8" fill="#f3f6f8"/>
+  <rect x="249" y="76" width="86" height="7" rx="3" fill="#6d8291"/><rect x="249" y="94" width="154" height="5" rx="2" fill="#c1cbd2"/>
+  <rect x="249" y="111" width="110" height="5" rx="2" fill="#c1cbd2"/>
+  <rect x="232" y="154" width="94" height="84" rx="8" fill="#f3f6f8"/><rect x="338" y="154" width="92" height="84" rx="8" fill="#f3f6f8"/>
+  <rect x="249" y="172" width="45" height="6" rx="3" fill="#8297a5"/><rect x="249" y="188" width="60" height="18" rx="5" fill="#d6e5ee"/>
+  <rect x="354" y="172" width="45" height="6" rx="3" fill="#8297a5"/><rect x="354" y="188" width="58" height="18" rx="5" fill="#d6e5ee"/>
+ </g>
+</g>
+<!-- card 2: green dashboard + phone -->
+<g transform="translate(570 24)">
+ <rect width="520" height="430" rx="28" fill="url(#green)"/>
+ <g filter="url(#shadow)" transform="translate(38 68)">
+  <rect width="375" height="282" rx="12" fill="#fff"/>
+  <path d="M0 12Q0 0 12 0H363Q375 0 375 12V34H0Z" fill="#f0f3f1"/>
+  <circle cx="17" cy="17" r="4" fill="#e66c60"/><circle cx="32" cy="17" r="4" fill="#e8bd55"/><circle cx="47" cy="17" r="4" fill="#67a77d"/>
+  <rect x="120" y="10" width="140" height="14" rx="5" fill="#e2e9e5"/>
+  <rect x="24" y="58" width="150" height="16" rx="4" fill="#173a2c"/>
+  <rect x="24" y="87" width="170" height="6" rx="3" fill="#aab8b0"/>
+  <rect x="24" y="109" width="142" height="6" rx="3" fill="#c7d1cb"/>
+  <rect x="24" y="143" width="120" height="32" rx="7" fill="#2e7750"/>
+  <rect x="24" y="196" width="324" height="62" rx="8" fill="#f2f6f3"/>
+  <path d="M40 232L85 214 130 225 175 204 220 214 265 194 330 205" fill="none" stroke="#4d9169" stroke-width="4"/>
+ </g>
+ <g filter="url(#shadow)" transform="translate(350 126)">
+  <rect width="132" height="250" rx="22" fill="#141b18"/><rect x="6" y="7" width="120" height="236" rx="17" fill="#fff"/>
+  <rect x="44" y="13" width="44" height="5" rx="3" fill="#222"/>
+  <rect x="18" y="39" width="85" height="7" rx="3" fill="#203b2c"/>
+  <rect x="18" y="60" width="96" height="58" rx="7" fill="#e8f1e9"/>
+  <text x="25" y="83" font-family="Arial" font-size="9" fill="#53755c">AVAILABLE</text><text x="25" y="103" font-family="Arial" font-size="19" font-weight="bold" fill="#286a42">$4,820</text>
+  <rect x="18" y="132" width="96" height="6" rx="3" fill="#d7dfd9"/><rect x="18" y="150" width="96" height="6" rx="3" fill="#d7dfd9"/>
+  <circle cx="26" cy="179" r="8" fill="#dcebe0"/><rect x="41" y="175" width="64" height="5" rx="2" fill="#9eaaa1"/>
+  <circle cx="26" cy="204" r="8" fill="#dcebe0"/><rect x="41" y="200" width="64" height="5" rx="2" fill="#9eaaa1"/>
+ </g>
+</g>
+<!-- card 3: operations dashboard and two mobile views -->
+<g transform="translate(1122 24)">
+ <rect width="520" height="430" rx="28" fill="url(#sand)"/>
+ <g filter="url(#shadow)" transform="translate(104 54)">
+  <rect width="340" height="264" rx="12" fill="#1b1d1c"/><rect x="8" y="8" width="324" height="248" rx="7" fill="#fff"/>
+  <rect x="8" y="8" width="324" height="28" rx="7" fill="#f2f3f0"/>
+  <circle cx="22" cy="22" r="4" fill="#6a9875"/><rect x="45" y="17" width="118" height="9" rx="4" fill="#dce1dc"/>
+  <rect x="24" y="54" width="76" height="184" rx="5" fill="#f4f5f2"/>
+  <rect x="116" y="57" width="190" height="12" rx="4" fill="#243c2e"/>
+  <rect x="116" y="84" width="190" height="40" rx="6" fill="#f3f6f2"/>
+  <rect x="116" y="137" width="88" height="88" rx="6" fill="#eef4ed"/><rect x="216" y="137" width="90" height="88" rx="6" fill="#f4f0e9"/>
+  <path d="M129 198L150 178 170 190 191 157" fill="none" stroke="#5c9871" stroke-width="3"/>
+  <circle cx="141" cy="104" r="6" fill="#9ac6a1"/><rect x="155" y="100" width="116" height="6" rx="3" fill="#aeb9b0"/>
+ </g>
+ <g filter="url(#shadow)" transform="translate(22 188)">
+  <rect width="104" height="198" rx="19" fill="#171b19"/><rect x="5" y="6" width="94" height="186" rx="15" fill="#fff"/>
+  <rect x="34" y="12" width="36" height="4" rx="2" fill="#1d211e"/>
+  <rect x="15" y="37" width="72" height="6" rx="3" fill="#253b2d"/>
+  <rect x="15" y="54" width="72" height="44" rx="5" fill="#edf3ed"/>
+  <rect x="15" y="109" width="72" height="5" rx="2" fill="#c8d0ca"/><rect x="15" y="123" width="60" height="5" rx="2" fill="#c8d0ca"/>
+  <rect x="15" y="145" width="72" height="24" rx="5" fill="#dcebdd"/>
+ </g>
+ <g filter="url(#shadow)" transform="translate(397 190)">
+  <rect width="104" height="198" rx="19" fill="#171b19"/><rect x="5" y="6" width="94" height="186" rx="15" fill="#fff"/>
+  <rect x="34" y="12" width="36" height="4" rx="2" fill="#1d211e"/>
+  <rect x="15" y="37" width="72" height="6" rx="3" fill="#253b2d"/>
+  <rect x="15" y="54" width="72" height="42" rx="5" fill="#f4f0e9"/>
+  <rect x="15" y="108" width="72" height="5" rx="2" fill="#c8d0ca"/><rect x="15" y="122" width="58" height="5" rx="2" fill="#c8d0ca"/>
+  <rect x="15" y="145" width="72" height="24" rx="5" fill="#e7efe5"/>
+ </g>
+</g>
+<!-- card 4: terminal/observability -->
+<g transform="translate(1674 24)">
+ <rect width="548" height="430" rx="28" fill="url(#rust)"/>
+ <g filter="url(#shadow)" transform="translate(44 66)">
+  <rect width="460" height="296" rx="12" fill="#20252b"/>
+  <path d="M0 12Q0 0 12 0H448Q460 0 460 12V34H0Z" fill="#303841"/>
+  <circle cx="18" cy="17" r="4" fill="#e66c60"/><circle cx="33" cy="17" r="4" fill="#e8bd55"/><circle cx="48" cy="17" r="4" fill="#67a77d"/>
+  <rect x="22" y="56" width="120" height="8" rx="3" fill="#e6ecef"/>
+  <rect x="22" y="82" width="198" height="185" rx="7" fill="#272f36"/>
+  <path d="M38 222L68 192 98 204 128 157 158 173 190 123" fill="none" stroke="#77b89a" stroke-width="4"/>
+  <rect x="238" y="82" width="198" height="82" rx="7" fill="#2a333b"/>
+  <rect x="255" y="101" width="98" height="6" rx="3" fill="#8da0ad"/><rect x="255" y="119" width="160" height="5" rx="2" fill="#556572"/>
+  <rect x="238" y="178" width="198" height="89" rx="7" fill="#2a333b"/>
+  <circle cx="267" cy="222" r="15" fill="#7cb59a"/><circle cx="329" cy="222" r="15" fill="#d7a45c"/><circle cx="391" cy="222" r="15" fill="#b66d60"/>
+ </g>
+</g>
+</svg>
