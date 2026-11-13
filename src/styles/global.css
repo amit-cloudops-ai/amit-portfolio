@@ -234,3 +234,8 @@
   .work-menu-wrap{top:14px;right:16px}
   .work-menu{top:60px}
 }
+
+@media(max-width:700px){
+  .project-mobile-image{display:block}
+  .project-follow-preview{display:none}
+}
