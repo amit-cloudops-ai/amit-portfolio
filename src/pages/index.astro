@@ -108,6 +108,15 @@ import NameTicker from '../components/NameTicker';
       }));
     }
 
+    const workMenuWrap = document.querySelector<HTMLElement>('.work-menu-wrap');
+    const selectedWorkSection = document.querySelector<HTMLElement>('#selected-work');
+    if (workMenuWrap && selectedWorkSection && 'IntersectionObserver' in window) {
+      const workObserver = new IntersectionObserver(([entry]) => {
+        workMenuWrap.classList.toggle('is-active', entry.isIntersecting);
+      }, { threshold: 0.04 });
+      workObserver.observe(selectedWorkSection);
+    }
+
     const menuButton = document.querySelector<HTMLButtonElement>('.work-menu-button');
     const menu = document.querySelector<HTMLElement>('#work-menu');
     if (menuButton && menu) {
