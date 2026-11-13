@@ -3,49 +3,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout
   title="Amit Madakatti — Cloud & DevOps Engineer"
-  description="Amit Madakatti — Cloud & DevOps Engineer building reliable cloud infrastructure and platforms."
+  description="Amit Madakatti is a Cloud and DevOps Engineer building automated, secure and scalable infrastructure on AWS."
 >
   <main class="hero-page">
     <section class="hero-section" aria-labelledby="hero-title">
       <header class="hero-nav">
-        <a class="nav-left" href="/" aria-label="Amit Madakatti home">Amit P Madakatti</a>
+        <a class="nav-left" href="/" aria-label="Amit Madakatti home">Amit Madakatti</a>
         <nav class="nav-right" aria-label="Main navigation">
-          <a href="#work">Work</a>
-          <a href="/about/">About</a>
-          <a href="mailto:amitpm.work@gmail.com" class="project-pill">Start a project <span>↗</span></a>
+          <a href="/work/">Work</a>
+          <a href="/about/">Story</a>
+          <a href="mailto:amitpm.work@gmail.com" class="project-pill">Let’s talk</a>
         </nav>
       </header>
 
-      <div class="hero-main">
-        <p class="hero-subtitle-left">Cloud & DevOps Engineer<br />building dependable systems</p>
-        <div class="hero-status-right">
-          <div class="status-badge"><span class="status-dot"></span><span>Available for opportunities</span></div>
-          <span class="location-text">Based in Ranebennur, India</span>
+      <div class="hero-stage">
+        <h1 class="hero-role" id="hero-title">Cloud and DevOps engineer<br />building on AWS</h1>
+
+        <div class="hero-status">
+          <div class="status-line"><span class="status-dot"></span><span>Open to DevOps and Cloud roles</span></div>
+          <p>Based in Karnataka, India</p>
         </div>
 
-        <div class="giant-name-layer" aria-hidden="true">
-          <span>AMIT MADAKATTI</span>
-        </div>
-
-        <figure class="portrait-card-wrapper">
-          <div class="portrait-card">
-            <img
-              src="/images/amit-portrait-placeholder.svg"
-              alt="Portrait placeholder for Amit Madakatti"
-              fetchpriority="high"
-            />
-          </div>
+        <figure class="portrait">
+          <img src="/images/amit-portrait-placeholder.svg" alt="Portrait of Amit Madakatti" fetchpriority="high" />
         </figure>
+
+        <div class="name-layer" aria-hidden="true">
+          <span>Amit Madakatti · Amit Madakatti ·</span>
+        </div>
+        <div class="name-layer name-layer-on-photo" aria-hidden="true">
+          <span>Amit Madakatti · Amit Madakatti ·</span>
+        </div>
       </div>
 
-      <div class="hero-footer">
-        <p class="hero-desc">
-          I design and engineer robust cloud infrastructure and platforms for digital products — and stay involved until they ship.
-        </p>
-        <a href="/about/" class="about-circle-btn" aria-label="Read about Amit">
-          <span>About me</span><span class="about-arrow">↗</span>
-        </a>
-      </div>
+      <p class="hero-promise">
+        I build cloud platforms that ship safely, and I stay on until they’re running in production.
+      </p>
+
+      <a class="story-button" href="/about/" aria-label="Read my story">
+        <span>My story</span><span class="story-arrow" aria-hidden="true">↗</span>
+      </a>
     </section>
   </main>
 </BaseLayout>
