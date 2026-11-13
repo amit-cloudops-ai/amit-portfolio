@@ -1267,6 +1267,15 @@ a.credential-link:hover{
   right:2.1vw;
   z-index:1000;
   isolation:isolate;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity .25s ease,transform .25s ease;
+}
+.site-menu-wrap.is-visible{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
 }
 .site-menu-wrap .work-menu-button{
   width:58px;
@@ -1281,12 +1290,10 @@ a.credential-link:hover{
   max-height:min(70vh,520px);
   overflow:auto;
 }
-.hero-nav{padding-right:78px}
 @media(max-width:700px){
-  .site-menu-wrap{top:78px;right:19px}
+  .site-menu-wrap{top:18px;right:19px}
   .site-menu-wrap .work-menu-button{width:48px;height:48px}
   .site-menu-wrap .work-menu{top:58px}
-  .hero-nav{padding-right:0}
 }
 
 /* About — two-column portrait composition from the Juno reference */
