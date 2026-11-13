@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const agents = [
+  {
+    slug: 'incident-triage',
+    number: '01',
+    name: 'Incident Triage',
+    category: 'OBSERVABILITY / INCIDENT RESPONSE',
+    summary: 'Turn a noisy alert into a useful first response: a concise incident summary, likely cause, supporting signals and practical next steps.',
+    tools: ['Kubernetes events and workload state', 'Prometheus metrics and Grafana alerts', 'CloudWatch logs and alarms', 'Slack for incident summaries'],
+    boundary: 'Read-only access to cluster state, metrics and logs. The agent may draft a Slack update, but it cannot restart workloads, change configuration or silence alerts.',
+    approval: 'A human validates the suggested cause and explicitly chooses any remediation. The agent records the evidence and links used in its recommendation.',
+    demo: 'A working incident walkthrough and evaluation examples will be published here as the agent is built.'
+  },
+  {
+    slug: 'terraform-reviewer',
+    number: '02',
+    name: 'Terraform Reviewer',
+    category: 'INFRASTRUCTURE AS CODE / CHANGE REVIEW',
+    summary: 'Inspect a Terraform plan before it is applied. Explain resource changes, highlight destructive operations and surface security or reliability risks.',
+    tools: ['Terraform plan output', 'GitHub pull requests and changed files', 'Policy and configuration checks', 'Repository documentation'],
+    boundary: 'Read-only access to pull requests, plan artifacts and policy results. No AWS credentials for mutation and no permission to run terraform apply.',
+    approval: 'A reviewer decides whether to request changes, approve the pull request or proceed with an apply. The agent provides findings with resource addresses and evidence.',
+    demo: 'A sample plan review and finding report will be published here as the agent is built.'
+  },
+  {
+    slug: 'release-guardian',
+    number: '03',
+    name: 'Release Guardian',
+    category: 'CI/CD / PROGRESSIVE DELIVERY',
+    summary: 'Follow a canary rollout, interpret release health signals and recommend whether the deployment should continue, pause or roll back.',
+    tools: ['Argo Rollouts rollout status', 'Prometheus release metrics', 'Kubernetes workload health', 'GitHub deployment and commit context'],
+    boundary: 'Read-only observation by default. The agent cannot promote a release, change traffic weights or initiate a rollback without an explicit approval path.',
+    approval: 'A human approves promotion or rollback. Any future automated action must be constrained by a separately defined policy, with an audit trail.',
+    demo: 'A canary evaluation walkthrough with sample health signals will be published here as the agent is built.'
+  },
+  {
+    slug: 'cost-watcher',
+    number: '04',
+    name: 'Cost Watcher',
+    category: 'AWS / FINOPS',
+    summary: 'Identify potentially idle or oversized AWS resources and turn billing and utilization signals into prioritised savings recommendations.',
+    tools: ['AWS Cost Explorer', 'CloudWatch utilization metrics', 'AWS resource inventory and tags', 'Recommendation reports'],
+    boundary: 'Read-only billing, inventory and monitoring permissions. No permission to stop, resize, delete or modify AWS resources.',
+    approval: 'A resource owner reviews each recommendation, checks workload impact and approves any change through the normal infrastructure workflow.',
+    demo: 'An example cost review with evidence-backed recommendations will be published here as the agent is built.'
+  },
+  {
+    slug: 'security-auditor',
+    number: '05',
+    name: 'Security Auditor',
+    category: 'CLOUD SECURITY / CONFIGURATION REVIEW',
+    summary: 'Find overly broad IAM permissions and exposed security-group rules, then explain the risk and suggest a narrower configuration.',
+    tools: ['IAM policies and role trust relationships', 'EC2 security-group rules', 'AWS IAM Access Analyzer findings', 'Infrastructure-as-code source files'],
+    boundary: 'Read-only access to IAM, network configuration and repository content. The agent cannot edit policies, revoke credentials or change security groups.',
+    approval: 'A security or infrastructure owner reviews the evidence and proposed least-privilege change before it is implemented.',
+    demo: 'A sample IAM and security-group audit report will be published here as the agent is built.'
+  },
+  {
+    slug: 'runbook-writer',
+    number: '06',
+    name: 'Runbook Writer',
+    category: 'DOCUMENTATION / RELIABILITY',
+    summary: 'Convert an incident timeline into a structured runbook with symptoms, diagnostics, recovery guidance and verification steps.',
+    tools: ['Incident timeline and post-incident notes', 'CloudWatch and application log excerpts', 'Existing runbooks and service documentation', 'GitHub for a proposed documentation change'],
+    boundary: 'Read-only access to incident evidence and existing documentation. The agent can draft a change but cannot publish operational instructions without review.',
+    approval: 'A service owner validates commands, prerequisites, rollback guidance and recovery checks before merging the runbook.',
+    demo: 'A before-and-after runbook example will be published here as the agent is built.'
+  }
+];
+
+export function getStaticPaths() {
+  return agents.map((agent) => ({ params: { slug: agent.slug }, props: { agent } }));
+}
+
+const { agent } = Astro.props;
+---
+<BaseLayout title={agent.name + ' — Agent Blueprint | Amit Madakatti'} description={agent.summary}>
+  <main class="agent-detail">
+    <header class="agent-detail-nav">
+      <a href="/" class="agent-detail-brand">Amit Madakatti</a>
+      <a href="/#agents" class="agent-detail-back">← ALL AGENTS</a>
+    </header>
+    <section class="agent-detail-hero">
+      <p class="agent-detail-kicker">AGENT BLUEPRINT / {agent.number} — {agent.category}</p>
+      <h1>{agent.name}<span>.</span></h1>
+      <p class="agent-detail-summary">{agent.summary}</p>
+    </section>
+    <section class="agent-detail-grid">
+      <article><p class="agent-detail-label">01 / TOOL ACCESS</p><h2>Connected tools</h2><ul>{agent.tools.map((tool) => <li>{tool}</li>)}</ul></article>
+      <article><p class="agent-detail-label">02 / PERMISSION BOUNDARY</p><h2>What it can touch</h2><p>{agent.boundary}</p></article>
+      <article><p class="agent-detail-label">03 / HUMAN APPROVAL</p><h2>Where you stay in control</h2><p>{agent.approval}</p></article>
+      <article class="agent-detail-demo"><p class="agent-detail-label">04 / BUILD NOTES &amp; DEMO</p><h2>Proof, not promises.</h2><p>{agent.demo}</p></article>
+    </section>
+    <footer class="agent-detail-footer"><a href="/#agents">← Back to the agent team</a><a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer">FOLLOW THE BUILD ↗</a></footer>
+  </main>
+  <style>
+    .agent-detail{min-height:100vh;padding:26px 6.2vw 42px;background:#f2f0ec;color:#211c1b}
+    .agent-detail-nav,.agent-detail-footer{display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .agent-detail-nav{font-size:13px;font-weight:700}
+    .agent-detail-back,.agent-detail-footer a:last-child{font-size:9px;font-weight:800;letter-spacing:.13em}
+    .agent-detail-hero{padding:clamp(85px,12vw,150px) 0 65px}
+    .agent-detail-kicker,.agent-detail-label{color:#8a817a;font-size:9px;font-weight:800;letter-spacing:.15em}
+    .agent-detail-hero h1{max-width:1100px;margin:28px 0 24px;font-size:clamp(64px,11vw,150px);font-weight:600;line-height:.86;letter-spacing:-.09em}
+    .agent-detail-hero h1 span{color:#a83b2b}
+    .agent-detail-summary{max-width:620px;margin:0;color:#746d68;font-size:clamp(16px,1.8vw,21px);line-height:1.55}
+    .agent-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #cfc9c1}
+    .agent-detail-grid article{padding:28px 32px 34px 0;border-bottom:1px solid #cfc9c1}
+    .agent-detail-grid article:nth-child(odd){border-right:1px solid #cfc9c1}
+    .agent-detail-grid article:nth-child(even){padding-left:32px}
+    .agent-detail-grid h2{margin:17px 0 14px;font-size:clamp(23px,2.6vw,34px);font-weight:600;letter-spacing:-.06em}
+    .agent-detail-grid p:not(.agent-detail-label),.agent-detail-grid li{max-width:560px;color:#746d68;font-size:14px;line-height:1.65}
+    .agent-detail-grid ul{margin:0;padding-left:18px}
+    .agent-detail-grid li{padding:3px 0}
+    .agent-detail-demo{grid-column:1/-1;border-right:0!important;padding-left:0!important}
+    .agent-detail-footer{margin-top:28px;font-size:11px}
+    .agent-detail-footer a:last-child{color:#a83b2b}
+    @media(max-width:700px){
+      .agent-detail{padding:20px 20px 30px}
+      .agent-detail-hero{padding:94px 0 46px}
+      .agent-detail-hero h1{font-size:clamp(58px,16vw,90px)}
+      .agent-detail-summary{font-size:15px}
+      .agent-detail-grid{grid-template-columns:1fr}
+      .agent-detail-grid article,.agent-detail-grid article:nth-child(even){padding:23px 0 26px;border-right:0}
+      .agent-detail-grid h2{font-size:26px}
+      .agent-detail-grid p:not(.agent-detail-label),.agent-detail-grid li{font-size:13px}
+      .agent-detail-demo{grid-column:auto}
+      .agent-detail-footer{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</BaseLayout>
