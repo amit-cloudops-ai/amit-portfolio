@@ -107,15 +107,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </footer>
     </section>
   </main>
+  <script>
+    const aboutMenu = document.querySelector<HTMLElement>('.about-menu');
+    const aboutIntro = document.querySelector<HTMLElement>('.about-intro');
+    if (aboutMenu && aboutIntro && 'IntersectionObserver' in window) {
+      const aboutMenuObserver = new IntersectionObserver(([entry]) => {
+        aboutMenu.classList.toggle('is-visible', !entry.isIntersecting);
+      }, { threshold: 0.08 });
+      aboutMenuObserver.observe(aboutIntro);
+    }
+  </script>
   <style>
     .about-page{background:#fff;color:#211c1b}
-    .about-nav{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:88px;padding:0 3vw;z-index:10}
+    .about-nav{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:82px;padding:32px 2.1vw 0;z-index:10}
     .about-wordmark{font-size:16px;font-weight:600;letter-spacing:-.045em}
-    .about-nav nav{display:flex;align-items:center;gap:clamp(22px,4vw,48px);font-size:15px;font-weight:500}
+    .about-nav nav{display:flex;align-items:center;gap:44px;padding-right:0;font-size:16px;font-weight:600}
     .about-nav nav a{transition:opacity .2s ease}
     .about-nav nav a:hover{opacity:.58}
     .about-talk{padding:13px 22px;border:1px solid #c9c2bc;border-radius:99px}
-    .about-menu{position:absolute;top:17px;right:2.2vw;z-index:20}
+    .about-menu{position:fixed;top:24px;right:2.1vw;z-index:1000;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease}
+    .about-menu.is-visible{opacity:1;pointer-events:auto;transform:translateY(0)}
     .about-menu summary{display:grid;width:58px;height:58px;place-content:center;gap:6px;border-radius:50%;background:#211c1b;cursor:pointer;list-style:none}
     .about-menu summary::-webkit-details-marker{display:none}
     .about-menu summary span{display:block;width:17px;height:1px;background:#fff}
@@ -145,8 +156,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .about-signoff{margin:30px 0 0;color:#716963;font-size:15px;line-height:1.5}
     .about-contact{margin-top:0}
     @media(max-width:900px){
-      .about-nav{min-height:78px;padding:0 5vw}
-      .about-nav nav{gap:22px;padding-right:58px}
+      .about-nav{min-height:82px;padding:24px 5vw 0}
+      .about-nav nav{gap:22px;padding-right:0}
       .about-menu{right:5vw}
       .about-story-grid{grid-template-columns:minmax(0,1fr) minmax(260px,.85fr);gap:5vw}
       .about-portrait{height:440px}
@@ -154,11 +165,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       .experience-row>span{font-size:13px}
     }
     @media(max-width:700px){
-      .about-nav{min-height:72px;padding:0 20px}
+      .about-nav{min-height:72px;padding:16px 20px 0}
       .about-wordmark{font-size:14px}
-      .about-nav nav{gap:16px;padding-right:48px;font-size:13px}
+      .about-nav nav{gap:16px;padding-right:0;font-size:13px}
       .about-talk{display:none}
-      .about-menu{top:13px;right:18px}
+      .about-menu{top:18px;right:19px}
       .about-menu summary{width:46px;height:46px}
       .about-menu-panel{top:54px}
       .about-intro,.about-experience,.about-principles{padding-right:20px;padding-left:20px}
