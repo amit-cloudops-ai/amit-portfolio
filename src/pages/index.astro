@@ -1,87 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-const projects = [
-  { number:'01', title:'Progressive Delivery Platform on EKS', category:'PLATFORM ENGINEERING', year:'2026', description:'A production-minded Kubernetes delivery platform with GitOps, progressive canaries, automated analysis and observable rollbacks.', tags:['AWS EKS','Argo CD','Argo Rollouts','Terraform'], href:'/work/progressive-delivery/' , tone:'lime' },
-  { number:'02', title:'Smart Employee Onboarding & Identity', category:'CLOUD ENGINEERING', year:'2026', description:'An event-driven onboarding service built with AWS serverless components, identity controls and workflow orchestration.', tags:['AWS Lambda','Cognito','Step Functions','DynamoDB'], href:'/work/employee-onboarding/', tone:'blue' },
-  { number:'03', title:'Three-tier AWS application', category:'CLOUD INFRASTRUCTURE', year:'2026', description:'A segmented multi-AZ network hosting a containerised application and managed relational database.', tags:['VPC','EC2','RDS','Nginx'], href:'/work/three-tier-aws/', tone:'sand' },
-  { number:'04', title:'Zero-downtime API deployments', category:'RELEASE ENGINEERING', year:'2026', description:'Progressive Lambda releases with health signals, traffic shifting and alert-driven rollback.', tags:['Lambda','API Gateway','CloudWatch','SNS'], href:'/work/zero-downtime-api/', tone:'pink' }
-];
 ---
-<BaseLayout title="Amit Madakatti — Cloud & DevOps Engineer" description="Amit Madakatti builds automated, secure and scalable cloud infrastructure on AWS. Cloud, DevOps, Platform Engineering and SRE portfolio.">
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="wordmark" href="/" aria-label="Amit Madakatti home">AM<span>.</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#work">Work</a><a href="#about">About</a><a href="#approach">Approach</a><a href="#contact" class="nav-contact">Let's talk <span>↗</span></a>
-      </nav>
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
-    </header>
+<BaseLayout
+  title="Amit Madakatti — Cloud & DevOps Engineer"
+  description="Amit Madakatti — Cloud & DevOps Engineer building reliable cloud infrastructure and platforms."
+>
+  <main class="hero-page">
+    <section class="hero-section" aria-labelledby="hero-title">
+      <header class="hero-nav">
+        <a class="nav-left" href="/" aria-label="Amit Madakatti home">Amit P Madakatti</a>
+        <nav class="nav-right" aria-label="Main navigation">
+          <a href="#work">Work</a>
+          <a href="/about/">About</a>
+          <a href="mailto:amitpm.work@gmail.com" class="project-pill">Start a project <span>↗</span></a>
+        </nav>
+      </header>
 
-    <main>
-      <section class="lerp-hero" aria-labelledby="hero-title">
-        <div class="lerp-hero-top">
-          <p class="lerp-kicker">CLOUD & DEVOPS ENGINEER</p>
-          <div class="lerp-availability"><span><i></i> Available for opportunities</span><small>Based in Karnataka, India</small></div>
+      <div class="hero-main">
+        <p class="hero-subtitle-left">Cloud & DevOps Engineer<br />building dependable systems</p>
+        <div class="hero-status-right">
+          <div class="status-badge"><span class="status-dot"></span><span>Available for opportunities</span></div>
+          <span class="location-text">Based in Ranebennur, India</span>
         </div>
-        <div class="lerp-hero-stage">
-          <p class="lerp-side-copy">I build reliable cloud infrastructure<br/>and platforms for digital products.</p>
-          <h1 id="hero-title" class="lerp-giant-name"><span>AMIT</span><span>MADAKATTI</span></h1>
-          <figure class="lerp-portrait">
-            <img src="/images/amit-portrait-placeholder.svg" alt="Portrait placeholder — replace with Amit's photograph" fetchpriority="high" />
-          </figure>
+
+        <div class="giant-name-layer" aria-hidden="true">
+          <span>AMIT MADAKATTI</span>
         </div>
-        <div class="lerp-hero-bottom">
-          <p>I design and run the cloud systems that keep products reliable. From infrastructure as code to progressive delivery, I build systems that are ready to operate.</p>
-          <a href="#about" class="lerp-about-button">About<br/>me <span>↗</span></a>
-        </div>
-      </section>
 
-      <section class="intro-strip" aria-label="Introduction">
-        <p>Cloud & DevOps Engineer. I build automated, secure and scalable infrastructure on AWS.</p>
-        <span>01 / 05</span>
-      </section>
+        <figure class="portrait-card-wrapper">
+          <div class="portrait-card">
+            <img
+              src="/images/amit-portrait-placeholder.svg"
+              alt="Portrait placeholder for Amit Madakatti"
+              fetchpriority="high"
+            />
+          </div>
+        </figure>
+      </div>
 
-      <section class="work-section section-pad" id="work">
-        <div class="section-heading"><div><span class="eyebrow">SELECTED WORK / 2026</span><h2>Systems built<br/><em>to stay up.</em></h2></div><p>Infrastructure, delivery platforms and automation — engineered to be dependable beyond the demo.</p></div>
-        <div class="project-list">
-          {projects.map((project) => <ProjectCard {...project} />)}
-        </div>
-        <div class="work-foot"><span>MORE BUILDS, NOTES & EXPERIMENTS</span><a href="https://github.com/amit-cloudops-ai" target="_blank" rel="noreferrer">Explore GitHub ↗</a></div>
-      </section>
-
-      <section class="manifesto section-pad" id="about">
-        <div class="manifesto-label"><span class="eyebrow">A LITTLE ABOUT ME</span><span>02 / 05</span></div>
-        <div class="manifesto-copy"><h2>From raw metal<br/>to <em>cloud systems.</em></h2><p>My path started with materials engineering at NITK Surathkal. It moved through manufacturing floors, classrooms and building businesses — and led me to cloud infrastructure. I enjoy making complex systems understandable, repeatable and resilient.</p><a class="text-link" href="/about/">More about my path <span>↗</span></a></div>
-      </section>
-
-      <section class="capabilities section-pad" id="capabilities">
-        <div class="cap-head"><span class="eyebrow">WHAT I WORK WITH</span><span>03 / 05</span></div>
-        <div class="cap-row"><span class="cap-index">01</span><h3>Cloud infrastructure</h3><p>AWS · VPC · IAM · EC2 · Lambda · S3 · RDS · ECS</p><span class="cap-arrow">↗</span></div>
-        <div class="cap-row"><span class="cap-index">02</span><h3>Platform engineering</h3><p>Kubernetes · EKS · Karpenter · Gateway API · Argo CD</p><span class="cap-arrow">↗</span></div>
-        <div class="cap-row"><span class="cap-index">03</span><h3>Delivery & automation</h3><p>Terraform · GitHub Actions · Argo Rollouts · GitOps</p><span class="cap-arrow">↗</span></div>
-        <div class="cap-row"><span class="cap-index">04</span><h3>Observability & reliability</h3><p>Prometheus · Grafana · Loki · CloudWatch · Alertmanager</p><span class="cap-arrow">↗</span></div>
-        <div class="cap-row"><span class="cap-index">05</span><h3>Systems & scripting</h3><p>Linux · Python · Bash · YAML · Networking</p><span class="cap-arrow">↗</span></div>
-      </section>
-
-      <section class="journey section-pad" id="approach">
-        <div class="journey-head"><span class="eyebrow">THE ROUTE SO FAR</span><span>04 / 05</span></div>
-        <h2>Different worlds.<br/><em>One way of thinking.</em></h2>
-        <div class="timeline">
-          <article><span class="timeline-year">2021 — 2025</span><div><h3>Forged</h3><p>Materials Engineering at NITK Surathkal. Learned to understand systems from their underlying properties.</p></div><span class="timeline-mark">01</span></article>
-          <article><span class="timeline-year">2024</span><div><h3>On the floor</h3><p>Industrial training at BHEL Electronics Division, Bengaluru — engineering, production planning, quality and material management.</p></div><span class="timeline-mark">02</span></article>
-          <article><span class="timeline-year">2025 — 2026</span><div><h3>Built & taught</h3><p>Taught mathematics, founded Ajji's Secret and Ventablk.co, and kept building practical technology projects.</p></div><span class="timeline-mark">03</span></article>
-          <article><span class="timeline-year">2026 — NOW</span><div><h3>Shipping cloud systems</h3><p>AWS Cloud Intern at F13 Technologies. Working across cloud architecture, automation and team delivery.</p></div><span class="timeline-mark">04</span></article>
-        </div>
-      </section>
-
-      <section class="contact section-pad" id="contact">
-        <div class="contact-top"><span class="eyebrow">HAVE A GOOD PROBLEM?</span><span>05 / 05</span></div>
-        <h2>Let's build<br/>something <em>reliable.</em></h2>
-        <div class="contact-bottom"><p>Open to Cloud, DevOps, Platform Engineering and SRE opportunities.</p><a class="contact-button" href="mailto:amitpm.work@gmail.com">Get in touch <span>↗</span></a></div>
-      </section>
-    </main>
-
-    <footer class="footer"><a class="wordmark" href="/">AM<span>.</span></a><span>© {new Date().getFullYear()} AMIT MADAKATTI</span><div><a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="https://github.com/amit-cloudops-ai" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="mailto:amitpm.work@gmail.com">EMAIL ↗</a></div></footer>
-  </div>
+      <div class="hero-footer">
+        <p class="hero-desc">
+          I design and engineer robust cloud infrastructure and platforms for digital products — and stay involved until they ship.
+        </p>
+        <a href="/about/" class="about-circle-btn" aria-label="Read about Amit">
+          <span>About me</span><span class="about-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
 </BaseLayout>
