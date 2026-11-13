@@ -199,3 +199,38 @@
   .hero-status{font-size:12px}
   .hero-status p{font-size:12px}
 }
+
+
+/* Restore desktop/tablet project interaction; thumbnails are mobile-only */
+.project-mobile-image{display:none}
+@media(max-width:900px){
+  .project-follow-preview{display:block;width:min(340px,38vw)}
+}
+
+/* Floating section menu: overlays the work section and never occupies its layout */
+.work-menu-wrap{
+  position:fixed;
+  top:22px;
+  right:6.2vw;
+  z-index:70;
+  padding:0;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity .25s ease,transform .25s ease,visibility .25s;
+}
+.work-menu-wrap.is-active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.work-menu{position:absolute;top:78px;right:0}
+@media(max-width:900px){
+  .work-menu-wrap{right:5vw}
+}
+@media(max-width:700px){
+  .work-menu-wrap{top:14px;right:16px}
+  .work-menu{top:60px}
+}
