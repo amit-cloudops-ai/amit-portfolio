@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Progressive delivery on Amazon EKS</title><desc id="desc">GitOps-driven canary releases with metric-gated abort and operational visibility.</desc>
+<defs>
+ <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#8D8983"/></marker>
+ <style>
+ text{font-family:Inter,Arial,sans-serif;fill:#24211F}.eyebrow{font-size:16px;letter-spacing:3px;fill:#8B817A;font-weight:700}.heading{font-size:34px;font-weight:700;letter-spacing:-1.2px}.sub{font-size:18px;fill:#6F6964}.box{fill:#fff;stroke:#D8D2CB;stroke-width:2}.cloud{fill:#F0EAE3;stroke:#CFC3B7;stroke-width:2}.accent{fill:#A83B2B;stroke:#A83B2B}.accentText{fill:#fff}.green{fill:#E8F1E9;stroke:#9EB6A2;stroke-width:2}.line{fill:none;stroke:#8D8983;stroke-width:3;marker-end:url(#arrow)}.dash{fill:none;stroke:#B7AFA7;stroke-width:2;stroke-dasharray:8 8}.small{font-size:16px;fill:#6F6964}.label{font-size:21px;font-weight:700}.tiny{font-size:14px;fill:#756E68}
+ </style>
+</defs>
+<rect width="1200" height="760" fill="#F7F7F5"/>
+<text x="64" y="58" class="eyebrow">AMIT MADAKATTI / ENGINEERING CASE STUDY</text>
+<text x="64" y="112" class="heading">Progressive delivery on Amazon EKS</text>
+<text x="64" y="146" class="sub">GitOps-driven canary releases with metric-gated abort and operational visibility.</text>
+
+<rect x="60" y="190" width="1080" height="470" rx="24" class="dash"/>
+<text x="88" y="224" class="eyebrow">AWS / EKS PLATFORM</text>
+<rect x="90" y="270" width="190" height="90" rx="14" class="box"/><text x="185" y="306" text-anchor="middle" class="label">Git repository</text><text x="185" y="334" text-anchor="middle" class="small">Manifests / Terraform</text>
+<rect x="350" y="270" width="190" height="90" rx="14" class="cloud"/><text x="445" y="306" text-anchor="middle" class="label">Argo CD</text><text x="445" y="334" text-anchor="middle" class="small">GitOps sync</text>
+<path d="M280 315 H345" class="line"/>
+<rect x="610" y="270" width="210" height="90" rx="14" class="cloud"/><text x="715" y="306" text-anchor="middle" class="label">Argo Rollouts</text><text x="715" y="334" text-anchor="middle" class="small">Canary controller</text>
+<path d="M540 315 H605" class="line"/>
+<rect x="890" y="270" width="205" height="90" rx="14" class="accent"/><text x="992" y="306" text-anchor="middle" class="label accentText">Gateway API</text><text x="992" y="334" text-anchor="middle" class="small accentText">VPC Lattice traffic split</text>
+<path d="M820 315 H885" class="line"/>
+<rect x="860" y="430" width="235" height="76" rx="14" class="box"/><text x="978" y="461" text-anchor="middle" class="label">Stable / Canary pods</text><text x="978" y="487" text-anchor="middle" class="small">Juice Shop v1 / v2</text>
+<path d="M992 360 V425" class="line"/>
+<rect x="580" y="430" width="220" height="76" rx="14" class="green"/><text x="690" y="461" text-anchor="middle" class="label">AnalysisTemplate</text><text x="690" y="487" text-anchor="middle" class="small">Prometheus request metrics</text>
+<path d="M800 468 H854" class="line"/>
+<rect x="300" y="430" width="220" height="76" rx="14" class="green"/><text x="410" y="461" text-anchor="middle" class="label">Prometheus</text><text x="410" y="487" text-anchor="middle" class="small">Canary health signal</text>
+<path d="M580 468 H526" class="line"/>
+<rect x="90" y="550" width="260" height="76" rx="14" class="box"/><text x="220" y="581" text-anchor="middle" class="label">Karpenter</text><text x="220" y="607" text-anchor="middle" class="small">Node provisioning / autoscaling</text>
+<rect x="390" y="550" width="300" height="76" rx="14" class="box"/><text x="540" y="581" text-anchor="middle" class="label">Prometheus · Grafana · Loki</text><text x="540" y="607" text-anchor="middle" class="small">Metrics, dashboards, logs</text>
+<rect x="730" y="550" width="365" height="76" rx="14" class="box"/><text x="912" y="581" text-anchor="middle" class="label">Alertmanager → AI Copilot → Slack</text><text x="912" y="607" text-anchor="middle" class="small">Alert context and incident summary</text>
+<text x="90" y="400" class="small">10% → analysis → 50% → 100%</text>
+<text x="610" y="400" class="small">Failed analysis → automatic abort / rollback</text>
+
+<text x="64" y="724" class="tiny">Architecture reconstructed from the repository's documented implementation. Not a live AWS topology view.</text>
+</svg>
