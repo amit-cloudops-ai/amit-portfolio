@@ -32,19 +32,20 @@ const personSchema = {
   ]
 };
 ---
-<script is:inline>
-  try {
-    if (!sessionStorage.getItem('amit-portfolio-intro-seen')) {
-      document.documentElement.classList.add('is-loading');
-      sessionStorage.setItem('amit-portfolio-intro-seen', '1');
-    }
-  } catch {
-    document.documentElement.classList.add('is-loading');
-  }
-</script>
+
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>
+      try {
+        if (!sessionStorage.getItem('amit-portfolio-intro-seen')) {
+          document.documentElement.classList.add('is-loading');
+          sessionStorage.setItem('amit-portfolio-intro-seen', '1');
+        }
+      } catch {
+        document.documentElement.classList.add('is-loading');
+      }
+    </script>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" /><title>{title}</title>
     <meta name="description" content={description} />
