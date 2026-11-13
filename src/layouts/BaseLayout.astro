@@ -32,6 +32,16 @@ const personSchema = {
   ]
 };
 ---
+<script is:inline>
+  try {
+    if (!sessionStorage.getItem('amit-portfolio-intro-seen')) {
+      document.documentElement.classList.add('is-loading');
+      sessionStorage.setItem('amit-portfolio-intro-seen', '1');
+    }
+  } catch {
+    document.documentElement.classList.add('is-loading');
+  }
+</script>
 <!doctype html>
 <html lang="en">
   <head>
@@ -54,7 +64,19 @@ const personSchema = {
     <slot name="head" />
   </head>
   <body>
+    <div class="site-preloader" aria-hidden="true">
+      <div class="preloader-main">
+        <div class="preloader-monogram">AM<span>.</span></div>
+        <p class="preloader-caption">Cloud systems / Built to run</p>
+      </div>
+      <div class="preloader-bottom">
+        <span>Amit Madakatti / Portfolio</span>
+        <div class="preloader-progress"><span></span></div>
+        <span class="preloader-percent">00</span>
+      </div>
+    </div>
     <slot />
+
     <script>
       const tracks = document.querySelectorAll<HTMLElement>('.ticker-track');
       let previousY = window.scrollY;
@@ -72,6 +94,50 @@ const personSchema = {
       window.addEventListener('wheel', (event) => {
         if (Math.abs(event.deltaY) > 1) setDirection(event.deltaY > 0 ? 'normal' : 'reverse');
       }, { passive: true });
+    </script>
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        if (!root.classList.contains('is-loading')) return;
+        const loader = document.querySelector('.site-preloader');
+        const bar = loader?.querySelector('.preloader-progress span');
+        const counter = loader?.querySelector('.preloader-percent');
+        if (!loader || !bar || !counter) {
+          root.classList.remove('is-loading');
+          return;
+        }
+        let value = 0;
+        let frame = 0;
+        let finished = false;
+        const render = (next) => {
+          value = Math.min(100, Math.max(value, next));
+          bar.style.width = value + '%';
+          counter.textContent = String(value).padStart(2, '0');
+        };
+        const start = performance.now();
+        const tick = (now) => {
+          if (finished) return;
+          render(Math.min(92, Math.round(92 * (1 - Math.exp(-(now - start) / 1050)))));
+          frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
+        const finish = () => {
+          if (finished) return;
+          finished = true;
+          cancelAnimationFrame(frame);
+          render(100);
+          window.setTimeout(() => {
+            root.classList.add('is-preloader-exit');
+            window.setTimeout(() => {
+              root.classList.remove('is-loading', 'is-preloader-exit');
+              loader.remove();
+            }, 500);
+          }, 220);
+        };
+        window.addEventListener('load', finish, { once: true });
+        window.setTimeout(finish, 5000);
+        if (document.readyState === 'complete') finish();
+      })();
     </script>
   </body>
 </html>
