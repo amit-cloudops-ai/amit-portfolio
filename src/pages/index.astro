@@ -8,7 +8,7 @@ import NameTicker from '../components/NameTicker';
       <header class="hero-nav">
         <a class="nav-left" href="/" aria-label="Amit Madakatti home">Amit Madakatti</a>
         <nav class="nav-right" aria-label="Main navigation">
-          <a href="/work/">Work</a><a href="/about/">Story</a>
+          <a href="#selected-work">Work</a><a href="/about/">Story</a>
           <a href="mailto:amitpm.work@gmail.com" class="project-pill">Let’s talk</a>
         </nav>
       </header>
@@ -26,5 +26,109 @@ import NameTicker from '../components/NameTicker';
       <p class="hero-promise">I build automated, secure AWS infrastructure, and I stay on until it runs without drama.</p>
       <a class="story-button" href="/about/" aria-label="Read my story"><span>My story</span></a>
     </section>
+
+    <section class="selected-work" id="selected-work" aria-labelledby="work-title">
+      <div class="work-heading">
+        <div class="work-heading-copy">
+          <p class="section-kicker">SELECTED WORK / 2024—26</p>
+          <h2 id="work-title">Systems built<br />to <span>run.</span></h2>
+        </div>
+        <div class="work-menu-wrap">
+          <button class="work-menu-button" type="button" aria-expanded="false" aria-controls="work-menu" aria-label="Open section menu">
+            <span class="menu-glyph" aria-hidden="true"><i></i><i></i></span>
+          </button>
+          <nav class="work-menu" id="work-menu" aria-label="Section menu" hidden>
+            <a href="/">Home <span>01</span></a>
+            <a href="/about/">About <span>02</span></a>
+            <a href="mailto:amitpm.work@gmail.com">Contact <span>03</span></a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="work-intro">
+        <p>Infrastructure, delivery and reliability — from the network edge to the release pipeline.</p>
+        <span>04 PROJECTS <b>↘</b></span>
+      </div>
+
+      <div class="project-list">
+        <a class="project-row" href="/work/progressive-delivery/" data-preview="/images/projects/progressive-delivery-platform.svg" aria-label="View Progressive Delivery Platform case study">
+          <span class="project-index">01</span>
+          <span class="project-main"><span class="project-type">KUBERNETES / PLATFORM ENGINEERING</span><span class="project-name">Progressive Delivery Platform</span><span class="project-summary">A self-healing release platform built around GitOps, canary analysis and automated rollback.</span></span>
+          <span class="project-stack">AWS · EKS · ARGO CD · TERRAFORM</span>
+          <span class="project-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="project-row" href="/work/employee-onboarding/" data-preview="/images/projects/employee-onboarding-service.svg" aria-label="View Employee Onboarding and Identity Service case study">
+          <span class="project-index">02</span>
+          <span class="project-main"><span class="project-type">SERVERLESS / IDENTITY AUTOMATION</span><span class="project-name">Employee Onboarding &amp; Identity</span><span class="project-summary">An AWS onboarding system connecting employee identity, workflow orchestration and document handling.</span></span>
+          <span class="project-stack">AWS · COGNITO · STEP FUNCTIONS</span>
+          <span class="project-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="project-row" href="/work/three-tier-aws/" data-preview="/images/projects/three-tier-web-app.svg" aria-label="View Three-Tier Web Application case study">
+          <span class="project-index">03</span>
+          <span class="project-main"><span class="project-type">CLOUD NETWORKING / WEB ARCHITECTURE</span><span class="project-name">Three-Tier AWS Application</span><span class="project-summary">A segmented AWS network separating the public entry point, application runtime and data layer.</span></span>
+          <span class="project-stack">AWS · VPC · EC2 · RDS</span>
+          <span class="project-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="project-row" href="/work/zero-downtime-api/" data-preview="/images/projects/zero-downtime-api-deployment.svg" aria-label="View Zero-Downtime API Deployments case study">
+          <span class="project-index">04</span>
+          <span class="project-main"><span class="project-type">RELEASE ENGINEERING / SERVERLESS</span><span class="project-name">Zero-Downtime API Deployments</span><span class="project-summary">Blue-green environments and controlled canary traffic for safer API releases.</span></span>
+          <span class="project-stack">API GATEWAY · LAMBDA · CLOUDWATCH</span>
+          <span class="project-open" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="work-bottom">
+        <span>BUILT WITH INTENT. OPERATED WITH CARE.</span>
+        <a href="https://github.com/amit-cloudops-ai" target="_blank" rel="noreferrer">MORE ON GITHUB <span>↗</span></a>
+      </div>
+      <div class="project-follow-preview" aria-hidden="true"><img src="/images/projects/progressive-delivery-platform.svg" alt="" /></div>
+    </section>
   </main>
+  <script>
+    const menuButton = document.querySelector<HTMLButtonElement>('.work-menu-button');
+    const menu = document.querySelector<HTMLElement>('#work-menu');
+    if (menuButton && menu) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+        menu.hidden = isOpen;
+      });
+      document.addEventListener('click', (event) => {
+        if (!menuButton.contains(event.target as Node) && !menu.contains(event.target as Node)) {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menu.hidden = true;
+        }
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          menuButton.setAttribute('aria-expanded', 'false');
+          menu.hidden = true;
+          menuButton.focus();
+        }
+      });
+    }
+
+    const preview = document.querySelector<HTMLElement>('.project-follow-preview');
+    const previewImage = preview?.querySelector('img');
+    const rows = document.querySelectorAll<HTMLElement>('.project-row');
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+    if (preview && previewImage && finePointer.matches) {
+      rows.forEach((row) => {
+        row.addEventListener('pointerenter', () => {
+          const source = row.dataset.preview;
+          if (source) previewImage.src = source;
+          preview.classList.add('is-visible');
+          rows.forEach((item) => item.classList.toggle('is-active', item === row));
+        });
+        row.addEventListener('pointermove', (event) => {
+          preview.style.left = `${event.clientX + 28}px`;
+          preview.style.top = `${event.clientY + 24}px`;
+        });
+        row.addEventListener('pointerleave', () => {
+          preview.classList.remove('is-visible');
+          row.classList.remove('is-active');
+        });
+      });
+    }
+  </script>
 </BaseLayout>
