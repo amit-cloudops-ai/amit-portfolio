@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import NameTicker from '../components/NameTicker';
 ---
 <BaseLayout title="Amit Madakatti — Cloud & DevOps Engineer" description="Amit Madakatti is a Cloud and DevOps Engineer building automated, secure and scalable infrastructure on AWS.">
   <main class="hero-page">
@@ -20,8 +21,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <figure class="portrait">
           <img src="/images/amit-hero.webp" alt="Amit Madakatti, Cloud and DevOps Engineer" fetchpriority="high" />
         </figure>
-        <div class="ticker ticker-dark" aria-hidden="true"><div class="ticker-track"><span>Amit Madakatti&nbsp;·&nbsp;</span><span>Amit Madakatti&nbsp;·&nbsp;</span><span>Amit Madakatti&nbsp;·&nbsp;</span></div></div>
-        <div class="ticker ticker-light" aria-hidden="true"><div class="ticker-track"><span>Amit Madakatti&nbsp;·&nbsp;</span><span>Amit Madakatti&nbsp;·&nbsp;</span><span>Amit Madakatti&nbsp;·&nbsp;</span></div></div>
+        <NameTicker client:load />
       </div>
       <p class="hero-promise">I build automated, secure AWS infrastructure, and I stay on until it runs without drama.</p>
       <a class="story-button" href="/about/" aria-label="Read my story"><span>My story</span></a>
