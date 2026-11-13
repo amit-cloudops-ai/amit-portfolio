@@ -1555,3 +1555,12 @@ a.credential-link:hover{
   .agent-tags{font-size:10px}
   .credential-name p{font-size:13px}
 }
+
+
+@media(max-width:700px){
+  .project-type,.project-stack{font-size:11px;letter-spacing:.07em}
+  .project-index{font-size:11px}
+  .work-bottom{font-size:9px}
+  .agent-index,.agent-tags{font-size:11px}
+  .credential-date,.credential-status{font-size:10px}
+}
