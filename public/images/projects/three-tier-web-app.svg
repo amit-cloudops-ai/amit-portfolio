@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Three-tier web application on AWS</title><desc id="desc">Nginx public edge → Tomcat / Spring Boot private app tier → private RDS MySQL.</desc>
+<defs>
+ <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#8D8983"/></marker>
+ <style>
+ text{font-family:Inter,Arial,sans-serif;fill:#24211F}.eyebrow{font-size:16px;letter-spacing:3px;fill:#8B817A;font-weight:700}.heading{font-size:34px;font-weight:700;letter-spacing:-1.2px}.sub{font-size:18px;fill:#6F6964}.box{fill:#fff;stroke:#D8D2CB;stroke-width:2}.cloud{fill:#F0EAE3;stroke:#CFC3B7;stroke-width:2}.accent{fill:#A83B2B;stroke:#A83B2B}.accentText{fill:#fff}.green{fill:#E8F1E9;stroke:#9EB6A2;stroke-width:2}.line{fill:none;stroke:#8D8983;stroke-width:3;marker-end:url(#arrow)}.dash{fill:none;stroke:#B7AFA7;stroke-width:2;stroke-dasharray:8 8}.small{font-size:16px;fill:#6F6964}.label{font-size:21px;font-weight:700}.tiny{font-size:14px;fill:#756E68}
+ </style>
+</defs>
+<rect width="1200" height="760" fill="#F7F7F5"/>
+<text x="64" y="58" class="eyebrow">AMIT MADAKATTI / ENGINEERING CASE STUDY</text>
+<text x="64" y="112" class="heading">Three-tier web application on AWS</text>
+<text x="64" y="146" class="sub">Nginx public edge → Tomcat / Spring Boot private app tier → private RDS MySQL.</text>
+
+<rect x="70" y="195" width="1060" height="455" rx="22" class="dash"/>
+<text x="96" y="230" class="eyebrow">VPC 10.0.0.0/16 · TWO AVAILABILITY ZONES</text>
+<rect x="95" y="260" width="500" height="350" rx="18" class="cloud"/><text x="120" y="292" class="label">us-east-1a · active workload</text>
+<rect x="625" y="260" width="475" height="350" rx="18" class="box"/><text x="650" y="292" class="label">us-east-1b · reserved subnet layout</text>
+<rect x="130" y="330" width="205" height="85" rx="12" class="accent"/><text x="232" y="364" text-anchor="middle" class="label accentText">Public subnet</text><text x="232" y="390" text-anchor="middle" class="small accentText">Nginx / reverse proxy</text>
+<rect x="365" y="330" width="195" height="85" rx="12" class="box"/><text x="462" y="364" text-anchor="middle" class="label">App subnet</text><text x="462" y="390" text-anchor="middle" class="small">Tomcat / Spring Boot</text>
+<path d="M335 372 H360" class="line"/>
+<rect x="365" y="480" width="195" height="85" rx="12" class="green"/><text x="462" y="514" text-anchor="middle" class="label">Data subnet</text><text x="462" y="540" text-anchor="middle" class="small">Amazon RDS MySQL</text>
+<path d="M462 415 V475" class="line"/>
+<rect x="660" y="330" width="185" height="85" rx="12" class="box"/><text x="752" y="364" text-anchor="middle" class="label">Public subnet</text><text x="752" y="390" text-anchor="middle" class="small">NAT Gateway</text>
+<rect x="875" y="330" width="185" height="85" rx="12" class="box"/><text x="967" y="364" text-anchor="middle" class="label">App subnet</text><text x="967" y="390" text-anchor="middle" class="small">Reserved for HA</text>
+<rect x="875" y="480" width="185" height="85" rx="12" class="box"/><text x="967" y="514" text-anchor="middle" class="label">Data subnet</text><text x="967" y="540" text-anchor="middle" class="small">Reserved for replica</text>
+<path d="M845 372 H870" class="dash"/>
+<text x="130" y="455" class="small">Internet → IGW → Nginx :80</text>
+<text x="130" y="590" class="small">Security groups restrict Nginx → app :8080 → database :3306.</text>
+<text x="650" y="455" class="small">README describes reserved subnet space;</text><text x="650" y="480" class="small">it does not evidence active app/DB replicas.</text>
+
+<text x="64" y="724" class="tiny">Architecture reconstructed from the repository's documented implementation. Not a live AWS topology view.</text>
+</svg>
