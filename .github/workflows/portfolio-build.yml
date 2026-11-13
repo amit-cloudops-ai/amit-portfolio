@@ -1,0 +1,30 @@
+name: Portfolio build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Astro production build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.2.15
+      - name: Install dependencies
+        run: bun install
+      - name: Type-check and build
+        run: bun run build
