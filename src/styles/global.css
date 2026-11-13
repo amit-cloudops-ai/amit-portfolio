@@ -273,7 +273,7 @@
   display:flex;
   width:max-content;
   align-items:center;
-  animation:project-marquee 54s linear infinite;
+  animation:project-marquee 27s linear infinite;
   will-change:transform;
 }
 .marquee-track img{display:block;width:1840px;max-width:none;height:auto;flex:none}
@@ -361,7 +361,7 @@
   .work-marquee{margin:30px 0 0 -20px;padding:20px 0}
   .marquee-group{gap:14px;padding-right:14px}
   .marquee-group img{width:290px;height:185px;padding:7px;border-radius:12px}
-  .marquee-track{animation-duration:52s}
+  .marquee-track{animation-duration:27s}
 }
 
 /* Higher-specificity reset of the earlier generic marquee image sizing */
