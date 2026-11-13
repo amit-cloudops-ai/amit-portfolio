@@ -239,3 +239,57 @@
   .project-mobile-image{display:block}
   .project-follow-preview{display:none}
 }
+
+
+/* End-of-projects CTA and seamless, full-bleed interface marquee */
+.work-marquee{
+  width:100vw;
+  margin:clamp(48px,6vw,84px) 0 0 -6.2vw;
+  padding:26px 0 0;
+  overflow:hidden;
+  background:#1e1917;
+}
+.work-marquee-action{display:flex;justify-content:center;padding:0 20px 28px}
+.see-all-work{
+  display:inline-flex;
+  min-width:184px;
+  min-height:56px;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  padding:0 27px;
+  border:1px solid #c8c0ba;
+  border-radius:100px;
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.see-all-work span{font-size:17px;transition:transform .25s ease}
+.see-all-work:hover{color:#211c1b;background:#fff;border-color:#fff}
+.see-all-work:hover span{transform:translate(3px,-3px)}
+.marquee-window{width:100%;overflow:hidden;border-top:1px solid #4a403b}
+.marquee-track{
+  display:flex;
+  width:max-content;
+  align-items:center;
+  animation:project-marquee 54s linear infinite;
+  will-change:transform;
+}
+.marquee-track img{display:block;width:1840px;max-width:none;height:auto;flex:none}
+.work-marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes project-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:900px){
+  .work-marquee{margin-left:-5vw}
+  .marquee-track img{width:1480px}
+}
+@media(max-width:700px){
+  .work-marquee{margin:48px 0 0 -20px;padding-top:22px}
+  .work-marquee-action{padding-bottom:22px}
+  .see-all-work{min-width:160px;min-height:50px;font-size:13px}
+  .marquee-track img{width:1050px}
+  .marquee-track{animation-duration:42s}
+  .project-mobile-image{display:block;width:100%;margin-top:10px;aspect-ratio:1.62;overflow:hidden;border-radius:9px;background:#e6e1da}
+  .project-mobile-image img{display:block;width:100%;height:100%;object-fit:contain}
+}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;transform:none}}
