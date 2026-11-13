@@ -363,3 +363,16 @@
   .marquee-group img{width:290px;height:185px;padding:7px;border-radius:12px}
   .marquee-track{animation-duration:52s}
 }
+
+/* Higher-specificity reset of the earlier generic marquee image sizing */
+.marquee-track .marquee-group img{
+  width:clamp(300px,31vw,470px);
+  max-width:none;
+  height:clamp(190px,20vw,300px);
+}
+@media(max-width:900px){
+  .marquee-track .marquee-group img{width:360px;height:230px}
+}
+@media(max-width:700px){
+  .marquee-track .marquee-group img{width:290px;height:185px}
+}
