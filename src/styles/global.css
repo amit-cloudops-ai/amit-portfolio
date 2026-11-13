@@ -1552,3 +1552,26 @@ a.credential-link:hover{
   .agent-index,.agent-tags{font-size:11px}
   .credential-date,.credential-status{font-size:10px}
 }
+
+
+/* Shared contact footer — large rounded shoulders from the Juno reference */
+.contact-section{
+  margin:40px 1px 0;
+  padding-top:clamp(112px,11vw,166px);
+  border-radius:clamp(76px,8.2vw,142px) clamp(76px,8.2vw,142px) 0 0;
+  overflow:hidden;
+}
+@media(max-width:1000px){
+  .contact-section{
+    margin-top:30px;
+    padding-top:clamp(92px,10vw,126px);
+    border-radius:clamp(58px,8vw,88px) clamp(58px,8vw,88px) 0 0;
+  }
+}
+@media(max-width:700px){
+  .contact-section{
+    margin:20px 0 0;
+    padding:68px 20px 22px;
+    border-radius:42px 42px 0 0;
+  }
+}
