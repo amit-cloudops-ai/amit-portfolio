@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://amit-portfolio.pages.dev/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/about/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/work/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/work/progressive-delivery/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/work/employee-onboarding/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/work/three-tier-aws/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/work/zero-downtime-api/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/agents/incident-triage/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/agents/terraform-reviewer/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/agents/release-guardian/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/agents/cost-watcher/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/agents/security-auditor/</loc></url>
+  <url><loc>https://amit-portfolio.pages.dev/agents/runbook-writer/</loc></url>
+</urlset>
