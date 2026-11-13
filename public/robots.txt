@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amit-portfolio.pages.dev/sitemap.xml
+Sitemap: https://amit-portfolio.amitpm-github.workers.dev/sitemap.xml
