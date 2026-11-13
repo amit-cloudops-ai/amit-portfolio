@@ -2,6 +2,7 @@
 const { title = 'Amit Madakatti — Cloud & DevOps Engineer', description = 'Cloud, DevOps and platform engineering portfolio.' } = Astro.props;
 import '../styles/global.css';
 const siteUrl = Astro.site?.toString() ?? 'https://amit-portfolio.pages.dev';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -37,12 +38,12 @@ const personSchema = {
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" /><title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Amit Madakatti" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content="https://amit-portfolio.pages.dev/images/amit-hero.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
