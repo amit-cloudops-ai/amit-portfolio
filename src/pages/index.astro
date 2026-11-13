@@ -7,10 +7,13 @@ import NameTicker from '../components/NameTicker';
     <section class="hero-section" aria-labelledby="hero-title">
       <header class="hero-nav">
         <a class="nav-left" href="/" aria-label="Amit Madakatti home">Amit Madakatti</a>
-        <nav class="nav-right" aria-label="Main navigation">
+        <nav class="nav-right" id="hero-navigation" aria-label="Main navigation">
           <a href="#selected-work">Work</a><a href="/about/">Story</a>
           <a href="mailto:amitpm.work@gmail.com" class="project-pill">Let’s talk</a>
         </nav>
+        <button class="hero-mobile-menu" type="button" aria-expanded="false" aria-controls="hero-navigation" aria-label="Open navigation">
+          <span></span><span></span>
+        </button>
       </header>
       <div class="hero-stage">
         <h1 class="hero-role" id="hero-title">Cloud and DevOps engineer<br />building on AWS</h1>
@@ -89,6 +92,22 @@ import NameTicker from '../components/NameTicker';
     </section>
   </main>
   <script>
+    const heroMenuButton = document.querySelector<HTMLButtonElement>('.hero-mobile-menu');
+    const heroNavigation = document.querySelector<HTMLElement>('#hero-navigation');
+    if (heroMenuButton && heroNavigation) {
+      heroMenuButton.addEventListener('click', () => {
+        const isOpen = heroMenuButton.getAttribute('aria-expanded') === 'true';
+        heroMenuButton.setAttribute('aria-expanded', String(!isOpen));
+        heroMenuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+        heroNavigation.classList.toggle('is-mobile-open', !isOpen);
+      });
+      heroNavigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        heroMenuButton.setAttribute('aria-expanded', 'false');
+        heroMenuButton.setAttribute('aria-label', 'Open navigation');
+        heroNavigation.classList.remove('is-mobile-open');
+      }));
+    }
+
     const menuButton = document.querySelector<HTMLButtonElement>('.work-menu-button');
     const menu = document.querySelector<HTMLElement>('#work-menu');
     if (menuButton && menu) {
