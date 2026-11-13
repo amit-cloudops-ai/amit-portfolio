@@ -269,6 +269,60 @@ import NameTicker from '../components/NameTicker';
         </div>
       </div>
     </section>
+
+    <section class="agents-section" id="agents" aria-labelledby="agents-title">
+      <div class="agents-heading">
+        <div>
+          <p class="section-kicker">AGENT ROADMAP / CLOUD OPERATIONS</p>
+          <h2 id="agents-title">Meet the<br /><span>agents.</span></h2>
+        </div>
+        <p class="agents-intro">A team of focused agents for the repetitive work around cloud infrastructure. Each starts with a narrow job, scoped tools and a human approval boundary.</p>
+      </div>
+
+      <div class="agents-list">
+        <a class="agent-row" href="/agents/incident-triage/">
+          <span class="agent-index">01</span>
+          <span class="agent-main"><span class="agent-name">Incident Triage</span><span class="agent-description">Reads alerts and logs, then posts a likely cause and next steps to Slack.</span></span>
+          <span class="agent-tags">KUBERNETES · OBSERVABILITY</span>
+          <span class="agent-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="agent-row" href="/agents/terraform-reviewer/">
+          <span class="agent-index">02</span>
+          <span class="agent-main"><span class="agent-name">Terraform Reviewer</span><span class="agent-description">Reviews a plan before it’s applied and flags risky changes.</span></span>
+          <span class="agent-tags">INFRASTRUCTURE AS CODE</span>
+          <span class="agent-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="agent-row" href="/agents/release-guardian/">
+          <span class="agent-index">03</span>
+          <span class="agent-main"><span class="agent-name">Release Guardian</span><span class="agent-description">Watches a canary release and recommends continue or roll back.</span></span>
+          <span class="agent-tags">CI/CD · GITOPS</span>
+          <span class="agent-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="agent-row" href="/agents/cost-watcher/">
+          <span class="agent-index">04</span>
+          <span class="agent-main"><span class="agent-name">Cost Watcher</span><span class="agent-description">Finds idle or oversized AWS resources and suggests savings.</span></span>
+          <span class="agent-tags">AWS · FINOPS</span>
+          <span class="agent-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="agent-row" href="/agents/security-auditor/">
+          <span class="agent-index">05</span>
+          <span class="agent-main"><span class="agent-name">Security Auditor</span><span class="agent-description">Flags over-broad IAM permissions and open security groups.</span></span>
+          <span class="agent-tags">CLOUD SECURITY</span>
+          <span class="agent-open" aria-hidden="true">↗</span>
+        </a>
+        <a class="agent-row" href="/agents/runbook-writer/">
+          <span class="agent-index">06</span>
+          <span class="agent-main"><span class="agent-name">Runbook Writer</span><span class="agent-description">Turns an incident timeline into a clear, actionable runbook.</span></span>
+          <span class="agent-tags">DOCS · RELIABILITY</span>
+          <span class="agent-open" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="agents-footer">
+        <p>Small, useful agents. Clear boundaries. Human control.</p>
+        <a href="https://www.linkedin.com/in/amitpm8/" target="_blank" rel="noreferrer">FOLLOW THE BUILD <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
   </main>
   <script>
     const heroMenuButton = document.querySelector<HTMLButtonElement>('.hero-mobile-menu');
