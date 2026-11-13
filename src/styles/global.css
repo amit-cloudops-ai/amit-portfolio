@@ -1085,7 +1085,7 @@ a.credential-link:hover{
 }
 .credential-unlinked{border-color:transparent;color:#a59d95}
 .credentials-in-progress{margin-top:56px}
-.credentials-status{
+.credential-status{
   justify-self:end;
   color:var(--accent);
   font-size:10px;
