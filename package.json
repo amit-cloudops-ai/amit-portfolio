@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.14.1",
     "framer-motion": "^12.23.24",
     "react": "^19.1.1",
