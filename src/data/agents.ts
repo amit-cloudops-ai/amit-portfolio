@@ -37,7 +37,7 @@ export const agents = [
     number: '04',
     name: 'Cost Watcher',
     category: 'AWS / FINOPS',
-    summary: 'Review AWS inventory, billing trends and CloudWatch utilisation signals to identify potentially idle or oversized resources, explain the evidence and prioritise cost-saving recommendations.',
+    summary: 'Review AWS inventory, billing and CloudWatch signals to find idle or oversized resources and prioritise evidence-based cost-saving recommendations.',
     tools: ['AWS Cost Explorer', 'CloudWatch utilization metrics', 'AWS resource inventory and tags', 'Recommendation reports'],
     boundary: 'Read-only billing, inventory and monitoring permissions. No permission to stop, resize, delete or modify AWS resources.',
     approval: 'A resource owner reviews each recommendation, checks workload impact and approves any change through the normal infrastructure workflow.',
