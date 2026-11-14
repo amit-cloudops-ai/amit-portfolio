@@ -1,5 +1,5 @@
 ---
-const { title = 'Amit Madakatti — Cloud & DevOps Engineer', description = 'Cloud, DevOps and platform engineering portfolio.' } = Astro.props;
+const { title = 'Amit P Madakatti — Cloud & DevOps Engineer', description = 'Official portfolio of Amit P Madakatti, Cloud and DevOps Engineer in Karnataka, India. AWS infrastructure, Kubernetes, platform engineering and automation projects.' } = Astro.props;
 import '../styles/global.css';
 const siteUrl = Astro.site?.toString() ?? 'https://amitpm.dpdns.org';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
@@ -7,8 +7,14 @@ const socialImageUrl = new URL('/images/amit-hero.webp', siteUrl).toString();
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Amit Madakatti',
+  name: 'Amit P Madakatti',
+  alternateName: ['Amit Madakatti', 'Amit P M'],
+  givenName: 'Amit',
+  additionalName: 'P',
+  familyName: 'Madakatti',
   jobTitle: 'Cloud & DevOps Engineer',
+  description: 'Cloud and DevOps engineer based in Karnataka, India, focused on AWS infrastructure, Kubernetes, platform engineering, infrastructure automation and reliable delivery.',
+  image: socialImageUrl,
   url: siteUrl,
   email: 'mailto:amitpm.work@gmail.com',
   address: {
@@ -17,7 +23,7 @@ const personSchema = {
     addressCountry: 'IN'
   },
   sameAs: [
-    'https://www.linkedin.com/in/amitpm8/',
+    'https://www.linkedin.com/in/amitops/',
     'https://github.com/amit-cloudops-ai'
   ],
   knowsAbout: [
@@ -50,6 +56,8 @@ const personSchema = {
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" /><title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Amit P Madakatti" />
+    <meta property="og:locale" content="en_IN" />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Amit Madakatti" />
