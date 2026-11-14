@@ -37,11 +37,11 @@ export const agents = [
     number: '04',
     name: 'Cost Watcher',
     category: 'AWS / FINOPS',
-    summary: 'Identify potentially idle or oversized AWS resources and turn billing and utilization signals into prioritised savings recommendations.',
+    summary: 'Review AWS inventory, billing trends and CloudWatch utilisation signals to identify potentially idle or oversized resources, explain the evidence and prioritise cost-saving recommendations.',
     tools: ['AWS Cost Explorer', 'CloudWatch utilization metrics', 'AWS resource inventory and tags', 'Recommendation reports'],
     boundary: 'Read-only billing, inventory and monitoring permissions. No permission to stop, resize, delete or modify AWS resources.',
     approval: 'A resource owner reviews each recommendation, checks workload impact and approves any change through the normal infrastructure workflow.',
-    demo: 'An example cost review with evidence-backed recommendations will be published here as the agent is built.'
+    demo: 'A useful review should connect each recommendation to the exact resource, its tags, the billing period and the utilisation window examined. It should distinguish low utilisation from genuinely unnecessary capacity, call out missing telemetry, and estimate savings only when pricing and usage evidence support the calculation. Recommendations should include the operational trade-off, confidence level and a suggested owner for review. The first implementation will remain read-only: it can produce a prioritised report, but cannot stop, resize or delete resources. A human owner validates workload schedules, redundancy requirements and production impact before any change is made.'
   },
   {
     slug: 'security-auditor',
