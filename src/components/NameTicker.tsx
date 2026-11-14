@@ -1,7 +1,7 @@
 import { useAnimationFrame, useMotionValue, useScroll, useTransform, useVelocity, motion } from 'framer-motion';
 import { useRef } from 'react';
 
-const NAME = 'Amit Madakatti · ';
+const NAME = 'Amit P Madakatti · ';
 const REPEAT = 5;
 
 export default function NameTicker() {
