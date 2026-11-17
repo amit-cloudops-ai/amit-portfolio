@@ -1,31 +1,40 @@
-# Amit Madakatti — Portfolio
+# Amit Madakatti — Portfolio Repository
 
-Personal portfolio for Cloud, DevOps, Platform Engineering and SRE opportunities.
+Personal portfolio and professional evidence archive for Cloud, DevOps, Platform Engineering and SRE opportunities.
+
+## Repository contents
+
+- **Portfolio application:** Astro, TypeScript and CSS under `src/` and `public/`.
+- **Professional career record:** [Amit Madakatti — Professional Profile & Career Record](docs/profile/amit-madakatti-professional-profile.md).
+- **Source portfolio brief:** the full information supplied in the brief is preserved in the profile document.
+- **Credentials archive:** [Certificate index and original PDFs](docs/certifications/README.md).
+- **Project audit:** [Portfolio project audit](docs/portfolio-project-audit.md).
+
+## Scope
+
+This is a repository documentation and evidence archive update only. No Astro pages, components, styles, frontend data or deployment configuration have been changed. Changes under `docs/` and this README do not alter the deployed website.
+
+## Credential accuracy
+
+Course and learning-plan completion certificates are not equivalent to passing an AWS Certification exam. The credential index distinguishes training completion from exam-based certifications.
 
 ## Stack
+
 - Astro (static-first)
 - TypeScript
 - CSS custom properties and native browser interactions
 - Cloudflare Pages deployment
 
-## Professional credentials
-
-AWS Training & Certification learning achievements completed on **November 17, 2026** are catalogued in [docs/certifications](docs/certifications/README.md).
-
-The collection includes eight course completion certificates from the **AWS Artificial Intelligence Practitioner Learning Plan**, the learning plan completion certificate, and the separate **AWS Cloud Practitioner Essentials** course completion certificate.
-
-> **Credential accuracy:** These are AWS Training & Certification course/learning-plan completion certificates. They should not be represented as AWS Certified AI Practitioner or AWS Certified Cloud Practitioner exam certifications.
-
 ## Local development
+
 ```bash
 npm install
 npm run dev
 ```
 
 ## Build
+
 ```bash
 npm run build
 npm run preview
 ```
-
-The portfolio follows the visual language and interaction model of the Lerp Framer portfolio template, adapted to Amit's engineering work and evidence-backed project stories.
