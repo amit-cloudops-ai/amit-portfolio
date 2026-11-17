@@ -46,3 +46,27 @@ These AWS Training & Certification course and learning-plan documents are course
 - Use lowercase descriptive filenames separated by hyphens.
 - Add future credentials here with issuer wording, date, type and verification link.
 - Never commit account credentials, passwords, tokens or webhook URLs.
+
+
+## Additional files awaiting exact identification
+
+These files were already present in the repository. Their PDF contents were not available in the uploaded source set for direct inspection during this pass, so their titles are deliberately not guessed. They have been retained unchanged:
+
+- [03c62806-3c86-434f-9442-3fd9e894403e.pdf](03c62806-3c86-434f-9442-3fd9e894403e.pdf)
+- [365bd632-4225-4ef1-8bc8-61c707b58300.pdf](365bd632-4225-4ef1-8bc8-61c707b58300.pdf)
+- [4f8ad636-94b5-4569-a0a1-e59dc4127287.pdf](4f8ad636-94b5-4569-a0a1-e59dc4127287.pdf)
+- [5c8158f6-d183-43ec-8f80-728395b5bcff.pdf](5c8158f6-d183-43ec-8f80-728395b5bcff.pdf)
+- [711bbbe2-51e0-43a9-937f-5c403cf7acd0.pdf](711bbbe2-51e0-43a9-937f-5c403cf7acd0.pdf)
+- [9c0f59b9-fce5-4c61-86d3-e1ab6900236c.pdf](9c0f59b9-fce5-4c61-86d3-e1ab6900236c.pdf)
+- [d7a77170-ba01-40e3-bdc4-d4bd2fca9e01.pdf](d7a77170-ba01-40e3-bdc4-d4bd2fca9e01.pdf)
+- [bae4e957-fe6b-45a4-b4f6-8e87cd55fbc1.pdf](bae4e957-fe6b-45a4-b4f6-8e87cd55fbc1.pdf)
+- [bb58e66f-fdc4-4a03-9da1-7b2a506c5128.pdf](bb58e66f-fdc4-4a03-9da1-7b2a506c5128.pdf)
+- [fd9be838-30bd-48de-a66c-112c25201fda.pdf](fd9be838-30bd-48de-a66c-112c25201fda.pdf)
+- [e0b10d88-875b-44cd-92ab-2bda8758fef2_copy.pdf](e0b10d88-875b-44cd-92ab-2bda8758fef2_copy.pdf)
+
+Badge images retained:
+- [AWS Educate Introduction to Cloud 101 badge](aws-educate-introduction-to-cloud-101-training-badg.png)
+- [AWS Partner Technical Accredited Training badge](aws-partner-technical-accredited-training-badge.png)
+- [AWS Partner Agentic AI Essentials badge PDF](AWSPartnerAgenticAIEssentials-TrainingBadge_Badge20261021-20-ao3x6z.pdf)
+
+Once these remaining PDFs are supplied in this chat or their contents are otherwise accessible, each can be matched to its exact title and renamed without guessing.
