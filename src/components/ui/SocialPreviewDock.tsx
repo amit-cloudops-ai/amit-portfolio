@@ -15,7 +15,7 @@ type Profile = {
   email: string;
 };
 
-type Props = { profile: Profile };
+type Props = { profile: Profile; variant?: 'hero' };
 
 type LiveGithub = { avatar?: string; total?: number; days?: ContributionDay[] };
 
@@ -93,7 +93,7 @@ function LinkedinCard({ profile, avatar }: { profile: Profile; avatar: string })
   );
 }
 
-export default function SocialPreviewDock({ profile }: Props) {
+export default function SocialPreviewDock({ profile, variant }: Props) {
   const [active, setActive] = React.useState<'github' | 'linkedin' | 'twitter' | null>(null);
   const [live, setLive] = React.useState<LiveGithub>({});
   const [copied, setCopied] = React.useState(false);
@@ -158,7 +158,7 @@ export default function SocialPreviewDock({ profile }: Props) {
 
   return (
     <div
-      className="social-preview-dock"
+      className={"social-preview-dock" + (variant === 'hero' ? " social-preview-dock--hero" : "")}
       ref={rootRef}
       onMouseLeave={scheduleClose}
       onFocusCapture={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
