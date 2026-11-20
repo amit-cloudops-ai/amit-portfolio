@@ -10,6 +10,7 @@ type Profile = {
   location: string;
   githubUrl: string;
   linkedinUrl: string;
+  twitterUrl: string;
   avatarUrl: string;
   email: string;
 };
@@ -24,6 +25,10 @@ function GithubIcon() {
 
 function LinkedinIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.02h2.97v9.32ZM6.45 7.75a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.89 10.59h-2.96v-4.53c0-1.08-.02-2.47-1.51-2.47-1.52 0-1.75 1.18-1.75 2.39v4.61H9.16V9.02h2.84v1.27h.04c.4-.73 1.36-1.5 2.8-1.5 3 0 3.5 1.97 3.5 4.53v5.02Z"/></svg>;
+}
+
+function TwitterIcon() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.35L5.62 22H2.5l7.25-8.3L1.8 2h6.4l4.43 6.7L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.4L17.8 20Z"/></svg>;
 }
 
 function ContributionGrid({ days, username }: { days: ContributionDay[]; username: string }) {
@@ -62,6 +67,17 @@ function GithubCard({ profile, live }: { profile: Profile; live: LiveGithub }) {
   );
 }
 
+function TwitterCard({ profile }: { profile: Profile }) {
+  return (
+    <div className="spd-card spd-twitter-card">
+      <div className="spd-twitter-mark"><TwitterIcon /></div>
+      <strong>{profile.name}</strong>
+      <p>@amit___p_m</p>
+      <a className="spd-card-link" href={profile.twitterUrl} target="_blank" rel="noopener noreferrer">View profile on X <span aria-hidden="true">↗</span></a>
+    </div>
+  );
+}
+
 function LinkedinCard({ profile, avatar }: { profile: Profile; avatar: string }) {
   return (
     <div className="spd-card spd-linkedin-card">
@@ -78,7 +94,7 @@ function LinkedinCard({ profile, avatar }: { profile: Profile; avatar: string })
 }
 
 export default function SocialPreviewDock({ profile }: Props) {
-  const [active, setActive] = React.useState<'github' | 'linkedin' | null>(null);
+  const [active, setActive] = React.useState<'github' | 'linkedin' | 'twitter' | null>(null);
   const [live, setLive] = React.useState<LiveGithub>({});
   const [copied, setCopied] = React.useState(false);
   const rootRef = React.useRef<HTMLDivElement>(null);
@@ -125,7 +141,7 @@ export default function SocialPreviewDock({ profile }: Props) {
     closeTimer.current = setTimeout(() => setActive(null), 350);
   };
 
-  const open = (item: 'github' | 'linkedin') => {
+  const open = (item: 'github' | 'linkedin' | 'twitter') => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setActive(item);
   };
@@ -165,7 +181,9 @@ export default function SocialPreviewDock({ profile }: Props) {
             >
               {active === 'github'
                 ? <GithubCard profile={profile} live={live} />
-                : <LinkedinCard profile={profile} avatar={live.avatar ?? profile.avatarUrl} />}
+                : active === 'linkedin'
+                  ? <LinkedinCard profile={profile} avatar={live.avatar ?? profile.avatarUrl} />
+                  : <TwitterCard profile={profile} />}
             </motion.div>
           )}
         </AnimatePresence>
@@ -195,6 +213,15 @@ export default function SocialPreviewDock({ profile }: Props) {
           onFocus={() => open('linkedin')}
           onClick={() => setActive('linkedin')}
         ><LinkedinIcon /></button>
+        <button
+          type="button"
+          className={'spd-icon-button' + (active === 'twitter' ? ' is-active' : '')}
+          aria-label="Preview X profile"
+          aria-expanded={active === 'twitter'}
+          onMouseEnter={() => open('twitter')}
+          onFocus={() => open('twitter')}
+          onClick={() => setActive('twitter')}
+        ><TwitterIcon /></button>
       </div>
     </div>
   );
