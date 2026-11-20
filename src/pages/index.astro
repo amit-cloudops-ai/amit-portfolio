@@ -43,6 +43,19 @@ import SocialPreviewDock from '../components/ui/SocialPreviewDock';
       </div>
       <p class="hero-promise">I build automated, secure AWS infrastructure, and I stay on until it runs without drama.</p>
       <a class="story-button" href="/about/" aria-label="Read my story"><span>My story</span></a>
+      <div class="hero-social-dock" aria-label="Social profile previews">
+        <p class="hero-social-dock-label">CONNECT / EXPLORE</p>
+        <SocialPreviewDock client:visible profile={{
+          username: "amit-cloudops-ai",
+          name: "Amit P Madakatti",
+          headline: "Cloud & DevOps Engineer",
+          location: "Karnataka, India",
+          githubUrl: "https://github.com/amit-cloudops-ai",
+          linkedinUrl: "https://www.linkedin.com/in/amitops/",
+          avatarUrl: "/images/amit-hero.webp",
+          email: "amitpm.work@gmail.com"
+        }} />
+      </div>
     </section>
 
     <section class="selected-work" id="selected-work" aria-labelledby="work-title">
