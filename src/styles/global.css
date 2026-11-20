@@ -1826,3 +1826,9 @@ html.is-loading.is-preloader-exit .site-preloader{
 /* Personal identity is explicit in the rendered document for visitors and crawlers. */
 .hero-identity{position:absolute;z-index:8;top:-31px;left:2.1vw;margin:0;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:700px){.hero-identity{top:-25px;left:0;font-size:10px}}
+
+
+/* Social preview dock — contact footer integration */
+.contact-social-dock{justify-self:center;min-width:0;text-align:center}
+.contact-social-dock-label{margin:0 0 11px;color:#a99f98;font-size:9px;font-weight:750;letter-spacing:.16em}
+@media(max-width:700px){.contact-social-dock{justify-self:start;text-align:left}.contact-social-dock-label{margin-bottom:10px}}
