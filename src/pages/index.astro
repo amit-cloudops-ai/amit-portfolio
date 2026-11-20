@@ -45,12 +45,13 @@ import SocialPreviewDock from '../components/ui/SocialPreviewDock';
       <a class="story-button" href="/about/" aria-label="Read my story"><span>My story</span></a>
       <div class="hero-social-dock" aria-label="Social profile previews">
         <p class="hero-social-dock-label">CONNECT / EXPLORE</p>
-        <SocialPreviewDock client:visible profile={{
+        <SocialPreviewDock client:visible variant="hero" profile={{
           username: "amit-cloudops-ai",
           name: "Amit P Madakatti",
           headline: "Cloud & DevOps Engineer",
           location: "Karnataka, India",
           githubUrl: "https://github.com/amit-cloudops-ai",
+          twitterUrl: "https://x.com/amit___p_m",
           linkedinUrl: "https://www.linkedin.com/in/amitops/",
           avatarUrl: "/images/amit-hero.webp",
           email: "amitpm.work@gmail.com"
@@ -383,6 +384,7 @@ import SocialPreviewDock from '../components/ui/SocialPreviewDock';
             headline: "Cloud & DevOps Engineer",
             location: "Karnataka, India",
             githubUrl: "https://github.com/amit-cloudops-ai",
+          twitterUrl: "https://x.com/amit___p_m",
             linkedinUrl: "https://www.linkedin.com/in/amitops/",
             avatarUrl: "/images/amit-hero.webp",
             email: "amitpm.work@gmail.com"
