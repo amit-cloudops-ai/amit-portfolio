@@ -81,7 +81,6 @@ export default function SocialPreviewDock({ profile }: Props) {
   const [active, setActive] = React.useState<'github' | 'linkedin' | null>(null);
   const [live, setLive] = React.useState<LiveGithub>({});
   const [copied, setCopied] = React.useState(false);
-  const rootRef = React.useRef<HTMLDivElement>(null);
   const closeTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   React.useEffect(() => {
@@ -113,7 +112,7 @@ export default function SocialPreviewDock({ profile }: Props) {
 
   const scheduleClose = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setActive(null), 130);
+    closeTimer.current = setTimeout(() => setActive(null), 350);
   };
 
   const open = (item: 'github' | 'linkedin') => {
@@ -134,7 +133,6 @@ export default function SocialPreviewDock({ profile }: Props) {
   return (
     <div
       className="social-preview-dock"
-      ref={rootRef}
       onMouseLeave={scheduleClose}
       onFocusCapture={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
       onBlurCapture={(event) => {
@@ -174,7 +172,7 @@ export default function SocialPreviewDock({ profile }: Props) {
           aria-label="Preview GitHub profile"
           aria-expanded={active === 'github'}
           onMouseEnter={() => open('github')}
-          onFocus={() => open('github')}
+          onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) open('github'); }}
           onClick={() => setActive(active === 'github' ? null : 'github')}
         ><GithubIcon /></button>
         <button
@@ -183,7 +181,7 @@ export default function SocialPreviewDock({ profile }: Props) {
           aria-label="Preview LinkedIn profile"
           aria-expanded={active === 'linkedin'}
           onMouseEnter={() => open('linkedin')}
-          onFocus={() => open('linkedin')}
+          onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) open('linkedin'); }}
           onClick={() => setActive(active === 'linkedin' ? null : 'linkedin')}
         ><LinkedinIcon /></button>
       </div>
