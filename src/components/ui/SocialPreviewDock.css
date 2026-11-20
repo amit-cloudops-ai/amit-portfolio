@@ -35,3 +35,49 @@
 .spd-divider{width:1px;height:20px;background:rgba(255,255,255,.18)}
 @media(max-width:600px){.spd-preview-slot{width:min(340px,calc(100vw - 40px));bottom:calc(100% + 12px)}.spd-card{padding:15px}.spd-heatmap{grid-template-rows:repeat(7,5px);grid-auto-columns:5px;gap:2px}.spd-day{width:5px;height:5px}.spd-controls{gap:5px}.spd-copy-button{padding:0 11px}}
 @media(prefers-reduced-motion:reduce){.social-preview-dock *{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Hero variant — high-contrast editorial toolbar on the light hero canvas. */
+.social-preview-dock--hero .spd-controls{
+  gap:9px;
+  padding:8px 10px;
+  border:1px solid #d8d0ca;
+  background:#fff;
+  box-shadow:0 8px 28px rgba(33,28,27,.09);
+  backdrop-filter:none;
+}
+.social-preview-dock--hero .spd-copy-button,
+.social-preview-dock--hero .spd-icon-button{
+  min-height:46px;
+  color:#211c1b;
+}
+.social-preview-dock--hero .spd-copy-button{
+  gap:14px;
+  padding:0 15px;
+  font-size:13px;
+  font-weight:650;
+}
+.social-preview-dock--hero .spd-copy-icon{color:#a83b2b;font-size:19px}
+.social-preview-dock--hero .spd-icon-button{width:46px;height:46px}
+.social-preview-dock--hero .spd-icon-button svg{width:21px;height:21px}
+.social-preview-dock--hero .spd-divider{height:24px;background:#d8d0ca}
+.social-preview-dock--hero .spd-icon-button:hover,
+.social-preview-dock--hero .spd-icon-button.is-active{background:#a83b2b;color:#fff}
+.social-preview-dock--hero .spd-copy-button:hover{background:#f4f0ed;color:#211c1b}
+.social-preview-dock--hero .spd-icon-button:focus-visible,
+.social-preview-dock--hero .spd-copy-button:focus-visible{outline-color:#a83b2b}
+.spd-twitter-card{position:relative;min-height:158px;padding-top:24px}
+.spd-twitter-mark{display:flex;width:36px;height:36px;align-items:center;justify-content:center;margin-bottom:15px;border-radius:50%;background:#fff;color:#211c1b}
+.spd-twitter-mark svg{width:18px;height:18px}
+.spd-twitter-card>strong{display:block;color:#fff;font-size:14px;font-weight:650}
+.spd-twitter-card>p{margin:4px 0 15px;color:#bcb0a8;font-size:12px}
+@media(max-width:600px){
+  .social-preview-dock--hero .spd-controls{gap:5px;padding:7px}
+  .social-preview-dock--hero .spd-copy-button{gap:9px;padding:0 11px;font-size:12px}
+  .social-preview-dock--hero .spd-icon-button{width:42px;height:44px}
+  .social-preview-dock--hero .spd-copy-button,
+  .social-preview-dock--hero .spd-icon-button{min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  .social-preview-dock--hero .spd-controls{box-shadow:none}
+}
