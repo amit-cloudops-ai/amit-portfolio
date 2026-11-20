@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import './SocialPreviewDock.css';
 
 type ContributionDay = { date: string; count: number; level: number };
@@ -81,6 +81,8 @@ export default function SocialPreviewDock({ profile }: Props) {
   const [active, setActive] = React.useState<'github' | 'linkedin' | null>(null);
   const [live, setLive] = React.useState<LiveGithub>({});
   const [copied, setCopied] = React.useState(false);
+  const rootRef = React.useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
   const closeTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   React.useEffect(() => {
@@ -105,6 +107,14 @@ export default function SocialPreviewDock({ profile }: Props) {
     });
     return () => controller.abort();
   }, [profile.username]);
+
+  React.useEffect(() => {
+    const closeOnOutsidePress = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setActive(null);
+    };
+    document.addEventListener('pointerdown', closeOnOutsidePress);
+    return () => document.removeEventListener('pointerdown', closeOnOutsidePress);
+  }, []);
 
   React.useEffect(() => () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -133,6 +143,7 @@ export default function SocialPreviewDock({ profile }: Props) {
   return (
     <div
       className="social-preview-dock"
+      ref={rootRef}
       onMouseLeave={scheduleClose}
       onFocusCapture={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
       onBlurCapture={(event) => {
@@ -149,7 +160,7 @@ export default function SocialPreviewDock({ profile }: Props) {
               initial={{ opacity: 0, y: 8, scale: 0.985 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 5, scale: 0.99 }}
-              transition={{ duration: 0.17, ease: [0.22, 1, 0.36, 1] }}
+              transition={reduceMotion ? { duration: 0 } : { duration: 0.17, ease: [0.22, 1, 0.36, 1] }}
               onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
             >
               {active === 'github'
@@ -172,8 +183,8 @@ export default function SocialPreviewDock({ profile }: Props) {
           aria-label="Preview GitHub profile"
           aria-expanded={active === 'github'}
           onMouseEnter={() => open('github')}
-          onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) open('github'); }}
-          onClick={() => setActive(active === 'github' ? null : 'github')}
+          onFocus={() => open('github')}
+          onClick={() => setActive('github')}
         ><GithubIcon /></button>
         <button
           type="button"
@@ -181,8 +192,8 @@ export default function SocialPreviewDock({ profile }: Props) {
           aria-label="Preview LinkedIn profile"
           aria-expanded={active === 'linkedin'}
           onMouseEnter={() => open('linkedin')}
-          onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) open('linkedin'); }}
-          onClick={() => setActive(active === 'linkedin' ? null : 'linkedin')}
+          onFocus={() => open('linkedin')}
+          onClick={() => setActive('linkedin')}
         ><LinkedinIcon /></button>
       </div>
     </div>
