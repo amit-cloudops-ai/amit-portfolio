@@ -3,7 +3,7 @@ const { title = 'Amit P Madakatti — Cloud & DevOps Engineer', description = 'O
 import '../styles/global.css';
 const siteUrl = Astro.site?.toString() ?? 'https://amitpm.dpdns.org';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
-const socialImageUrl = new URL('/images/amit-hero.webp', siteUrl).toString();
+const socialImageUrl = new URL('/images/og-portfolio.svg', siteUrl).toString();
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -61,14 +61,20 @@ const personSchema = {
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Amit P Madakatti" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={socialDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:secure_url" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="My Engineering Portfolio — Amit P Madakatti, Cloud & DevOps Engineering" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={socialDescription} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="My Engineering Portfolio — Amit P Madakatti, Cloud & DevOps Engineering" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <slot name="head" />
