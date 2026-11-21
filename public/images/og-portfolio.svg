@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">My Engineering Portfolio — Amit P Madakatti</title>
+  <desc id="desc">Amit P Madakatti, Cloud and DevOps Engineering. AWS infrastructure, Kubernetes and automation.</desc>
+  <defs>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#c8bfb1" stroke-width="0.7" opacity=".36"/></pattern>
+    <clipPath id="portraitClip"><rect x="0" y="0" width="430" height="630" rx="0"/></clipPath>
+    <linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#181715" stop-opacity=".04"/><stop offset="1" stop-color="#181715" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f2eee7"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="90" cy="160" r="220" fill="#b94d1d"/>
+  <rect x="0" y="0" width="430" height="630" fill="#e8e0d5"/>
+  <image xlink:href="https://amitpm.dpdns.org/images/amit-hero.webp" href="https://amitpm.dpdns.org/images/amit-hero.webp" x="0" y="0" width="430" height="630" preserveAspectRatio="xMidYMid slice" clip-path="url(#portraitClip)"/>
+  <rect x="0" y="0" width="430" height="630" fill="url(#fade)"/>
+  <path d="M430 0V630" stroke="#b94d1d" stroke-width="3"/>
+  <g fill="#1d1b18">
+    <text x="500" y="82" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="5">CLOUD  /  DEVOPS  /  PLATFORM ENGINEERING</text>
+    <path d="M500 106H1138" stroke="#a99d8e" stroke-width="1.2"/>
+    <path d="M500 106H570" stroke="#b94d1d" stroke-width="5"/>
+    <text x="500" y="222" font-family="Georgia,'Times New Roman',serif" font-size="75" font-weight="700" letter-spacing="-2">My Engineering</text>
+    <text x="500" y="307" font-family="Georgia,'Times New Roman',serif" font-size="91" font-weight="700" letter-spacing="-3" fill="#b94d1d">Portfolio</text>
+    <rect x="501" y="352" width="5" height="47" fill="#b94d1d"/>
+    <text x="526" y="385" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="700">Amit P Madakatti</text>
+    <text x="526" y="430" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#555047">AWS infrastructure  ·  Kubernetes  ·  Automation</text>
+  </g>
+  <g transform="translate(890 450)" fill="none" stroke="#776451" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-10 -77c-3-19 12-34 31-34 8-24 44-27 57-5 24-1 34 29 17 44-8 7-17 8-27 8H-10z"/>
+    <path d="M32 -63v29l-45 26v29M32 -34l48 26v29"/>
+    <path d="M32 -34l-28 16v34l28 17 29-17v-34L32 -34z"/>
+    <path d="M4 -18l28 17 29-17M32 1v32"/>
+    <path d="M-25 26l-17 10v27l17 10 18-10V36l-18-10zM80 21l-16 9v26l16 9 17-9V30l-17-9z"/>
+    <path d="M-42 36l17 10 18-10M-25 46v27M64 30l16 10 17-10M80 40v25"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#1d1b18">
+    <text x="1080" y="62">AM<tspan fill="#b94d1d">.</tspan></text>
+  </g>
+  <path d="M500 548H1138" stroke="#c7bdae" stroke-width="1"/>
+  <text x="500" y="580" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3" fill="#756d63">DESIGNING · AUTOMATING · OPERATING CLOUD SYSTEMS</text>
+  <circle cx="1140" cy="548" r="4" fill="#b94d1d"/>
+</svg>
